@@ -4,19 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday, Saniaaa!!! ✨💖</title>
-    
-    <!-- Tailwind CSS CDN -->
+
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Sacramento&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome Icons -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Canvas Confetti Library for Sparkle Effect -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
     <script>
@@ -51,53 +47,84 @@
             overflow-x: hidden;
         }
 
-        .font-handwriting { font-family: 'Caveat', cursive; }
-        .font-cursive { font-family: 'Sacramento', cursive; }
+        .font-handwriting {
+            font-family: 'Caveat', cursive;
+        }
 
-        /* 3D Card Flip styling */
-        .perspective-1000 { perspective: 1000px; }
+        .font-cursive {
+            font-family: 'Sacramento', cursive;
+        }
+
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+
         .transform-style-3d {
             transform-style: preserve-3d;
             transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
         .backface-hidden {
             backface-visibility: hidden;
             -webkit-backface-visibility: hidden;
         }
-        .rotate-y-180 { transform: rotateY(180deg); }
 
-        /* Flame animation */
-        @keyframes flameFlicker {
-            0%, 100% { transform: scale(1) rotate(-1.5deg); opacity: 0.95; filter: drop-shadow(0 0 12px #f43f5e); }
-            50% { transform: scale(1.18) rotate(2deg); opacity: 1; filter: drop-shadow(0 0 20px #fbbf24); }
+        .rotate-y-180 {
+            transform: rotateY(180deg);
         }
+
+        @keyframes flameFlicker {
+            0%, 100% {
+                transform: scale(1) rotate(-1.5deg);
+                opacity: 0.95;
+                filter: drop-shadow(0 0 12px #f43f5e);
+            }
+            50% {
+                transform: scale(1.18) rotate(2deg);
+                opacity: 1;
+                filter: drop-shadow(0 0 20px #fbbf24);
+            }
+        }
+
         .candle-flame {
             animation: flameFlicker 0.7s infinite alternate;
             transform-origin: bottom center;
         }
 
-        /* Floating Animations */
         @keyframes gentleFloat {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-14px) rotate(2.5deg); }
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-14px) rotate(2.5deg);
+            }
         }
-        .animate-float { animation: gentleFloat 4.5s ease-in-out infinite; }
 
-        /* Sparkle Pulse Effect */
+        .animate-float {
+            animation: gentleFloat 4.5s ease-in-out infinite;
+        }
+
         @keyframes pulseGlow {
-            0%, 100% { opacity: 0.35; transform: scale(1); }
-            50% { opacity: 0.7; transform: scale(1.15); }
+            0%, 100% {
+                opacity: 0.35;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.7;
+                transform: scale(1.15);
+            }
         }
-        .animate-pulse-glow { animation: pulseGlow 5s ease-in-out infinite; }
 
-        /* Washi tape graphics */
+        .animate-pulse-glow {
+            animation: pulseGlow 5s ease-in-out infinite;
+        }
+
         .washi-tape {
             background: rgba(251, 207, 232, 0.65);
             backdrop-filter: blur(2px);
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
-        /* Glassmorphism Cards */
         .glass-card {
             background: rgba(28, 14, 46, 0.75);
             backdrop-filter: blur(16px);
@@ -105,620 +132,2376 @@
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
         }
 
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0d0617; }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0d0617;
+        }
+
         ::-webkit-scrollbar-thumb {
             background: #ec4899;
             border-radius: 4px;
         }
 
-        /* Final Gift Section */
-        .gift-scene { min-height: 560px; }
-        .gift-box-wrap { perspective: 900px; }
-        .gift-box { position: relative; width: 150px; height: 120px; margin: 0 auto; cursor: pointer; filter: drop-shadow(0 18px 25px rgba(244,114,182,.25)); }
-        .gift-base { position: absolute; left: 12px; bottom: 0; width: 126px; height: 88px; border-radius: 8px 8px 14px 14px; background: linear-gradient(135deg,#f9a8d4,#ec4899); border: 2px solid rgba(255,255,255,.45); box-shadow: inset 0 -12px 20px rgba(157,23,77,.15); }
-        .gift-ribbon-v { position: absolute; left: 63px; bottom: 0; width: 24px; height: 88px; background: linear-gradient(90deg,#fef3c7,#fde68a); z-index: 2; }
-        .gift-ribbon-h { position: absolute; left: 12px; bottom: 40px; width: 126px; height: 20px; background: #fde68a; z-index: 2; }
-        .gift-lid { position: absolute; left: 4px; top: 18px; width: 142px; height: 30px; border-radius: 9px; background: linear-gradient(135deg,#f472b6,#db2777); border: 2px solid rgba(255,255,255,.5); z-index: 4; transform-origin: 50% 100%; transition: transform .8s cubic-bezier(.2,.8,.2,1), top .8s; }
-        .gift-lid:before, .gift-lid:after { content:''; position:absolute; width:44px; height:28px; border:7px solid #fde68a; border-radius:50% 50% 0 50%; top:-24px; background:transparent; }
-        .gift-lid:before { left:25px; transform:rotate(-28deg); }
-        .gift-lid:after { right:25px; transform:scaleX(-1) rotate(-28deg); }
-        .gift-bow { position:absolute; left:64px; top:4px; width:22px; height:30px; background:#fde68a; border-radius:5px; z-index:5; transition:transform .8s; }
-        .gift-box.open .gift-lid { transform: translateY(-80px) rotate(-8deg); }
-        .gift-box.open .gift-bow { transform: translateY(-80px) rotate(-8deg); }
-        .gift-glow { position:absolute; inset:-30px; border-radius:50%; background:rgba(244,114,182,.18); filter:blur(25px); animation:pulseGlow 2.5s ease-in-out infinite; pointer-events:none; }
-        .gift-reveal { display:none; animation: giftReveal .8s ease both; }
-        .gift-reveal.show { display:flex; }
-        @keyframes giftReveal { from { opacity:0; transform:translateY(25px) scale(.94); } to { opacity:1; transform:translateY(0) scale(1); } }
+        /* ================================
+           SANIAAA LETTER - PHOTO STYLE
+           ================================ */
+
+        .sania-letter {
+            background:
+                radial-gradient(
+                    circle at 10% 15%,
+                    rgba(236, 72, 153, 0.08),
+                    transparent 25%
+                ),
+                radial-gradient(
+                    circle at 90% 85%,
+                    rgba(168, 85, 247, 0.08),
+                    transparent 25%
+                ),
+                rgba(20, 8, 34, 0.90);
+        }
+
+        .sania-letter-content {
+            font-size: 1.08rem;
+            line-height: 2;
+            color: rgba(243, 232, 255, 0.94);
+        }
+
+        .sania-quote {
+            position: relative;
+            margin: 2rem 0;
+            padding: 1.6rem 1.5rem;
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(236, 72, 153, 0.20),
+                    rgba(168, 85, 247, 0.12)
+                );
+
+            border-left: 6px solid #ec4899;
+
+            border-top: 1px solid rgba(244, 114, 182, 0.22);
+            border-right: 1px solid rgba(244, 114, 182, 0.15);
+            border-bottom: 1px solid rgba(244, 114, 182, 0.15);
+
+            box-shadow:
+                0 15px 35px rgba(0,0,0,0.28),
+                inset 0 0 30px rgba(236,72,153,0.04);
+        }
+
+        .sania-quote p {
+            font-family: 'Caveat', cursive;
+            font-size: 2rem;
+            line-height: 1.55;
+            color: #fce7f3;
+            font-style: italic;
+        }
+
+        .sania-ending {
+            font-family: 'Caveat', cursive;
+            font-size: 2rem;
+            color: #f9a8d4;
+            line-height: 1.4;
+        }
+
+        /* FINAL GIFT */
+
+        .gift-scene {
+            min-height: 560px;
+        }
+
+        .gift-box-wrap {
+            perspective: 900px;
+        }
+
+        .gift-box {
+            position: relative;
+            width: 150px;
+            height: 120px;
+            margin: 0 auto;
+            cursor: pointer;
+            filter: drop-shadow(
+                0 18px 25px rgba(244,114,182,.25)
+            );
+        }
+
+        .gift-base {
+            position: absolute;
+            left: 12px;
+            bottom: 0;
+            width: 126px;
+            height: 88px;
+            border-radius: 8px 8px 14px 14px;
+            background: linear-gradient(
+                135deg,
+                #f9a8d4,
+                #ec4899
+            );
+            border: 2px solid rgba(255,255,255,.45);
+            box-shadow: inset 0 -12px 20px rgba(157,23,77,.15);
+        }
+
+        .gift-ribbon-v {
+            position: absolute;
+            left: 63px;
+            bottom: 0;
+            width: 24px;
+            height: 88px;
+            background: linear-gradient(
+                90deg,
+                #fef3c7,
+                #fde68a
+            );
+            z-index: 2;
+        }
+
+        .gift-ribbon-h {
+            position: absolute;
+            left: 12px;
+            bottom: 40px;
+            width: 126px;
+            height: 20px;
+            background: #fde68a;
+            z-index: 2;
+        }
+
+        .gift-lid {
+            position: absolute;
+            left: 4px;
+            top: 18px;
+            width: 142px;
+            height: 30px;
+            border-radius: 9px;
+            background: linear-gradient(
+                135deg,
+                #f472b6,
+                #db2777
+            );
+            border: 2px solid rgba(255,255,255,.5);
+            z-index: 4;
+            transform-origin: 50% 100%;
+            transition:
+                transform .8s cubic-bezier(.2,.8,.2,1),
+                top .8s;
+        }
+
+        .gift-lid:before,
+        .gift-lid:after {
+            content:'';
+            position:absolute;
+            width:44px;
+            height:28px;
+            border:7px solid #fde68a;
+            border-radius:50% 50% 0 50%;
+            top:-24px;
+            background:transparent;
+        }
+
+        .gift-lid:before {
+            left:25px;
+            transform:rotate(-28deg);
+        }
+
+        .gift-lid:after {
+            right:25px;
+            transform:scaleX(-1) rotate(-28deg);
+        }
+
+        .gift-bow {
+            position:absolute;
+            left:64px;
+            top:4px;
+            width:22px;
+            height:30px;
+            background:#fde68a;
+            border-radius:5px;
+            z-index:5;
+            transition:transform .8s;
+        }
+
+        .gift-box.open .gift-lid {
+            transform:translateY(-80px) rotate(-8deg);
+        }
+
+        .gift-box.open .gift-bow {
+            transform:translateY(-80px) rotate(-8deg);
+        }
+
+        .gift-glow {
+            position:absolute;
+            inset:-30px;
+            border-radius:50%;
+            background:rgba(244,114,182,.18);
+            filter:blur(25px);
+            animation:pulseGlow 2.5s ease-in-out infinite;
+            pointer-events:none;
+        }
+
+        .gift-reveal {
+            display:none;
+            animation:giftReveal .8s ease both;
+        }
+
+        .gift-reveal.show {
+            display:flex;
+        }
+
+        @keyframes giftReveal {
+            from {
+                opacity:0;
+                transform:translateY(25px) scale(.94);
+            }
+            to {
+                opacity:1;
+                transform:translateY(0) scale(1);
+            }
+        }
+
+        @media (max-width: 640px) {
+
+            .sania-letter-content {
+                font-size: 1rem;
+                line-height: 1.9;
+            }
+
+            .sania-quote {
+                padding: 1.45rem 1.2rem;
+                margin: 1.5rem 0;
+            }
+
+            .sania-quote p {
+                font-size: 1.72rem;
+                line-height: 1.55;
+            }
+
+            .sania-ending {
+                font-size: 1.8rem;
+            }
+        }
+	/* =========================
+   BALLOON GAME
+   ========================= */
+
+.game-balloon {
+    position: absolute;
+    font-size: 65px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform .2s ease;
+    animation: balloonFloat 3s ease-in-out infinite;
+    filter: drop-shadow(0 8px 12px rgba(244,114,182,.35));
+}
+
+.game-balloon:hover {
+    transform: scale(1.15);
+}
+
+.balloon-1 {
+    left: 8%;
+    top: 12%;
+}
+
+.balloon-2 {
+    right: 10%;
+    top: 20%;
+    animation-delay: .5s;
+}
+
+.balloon-3 {
+    left: 40%;
+    top: 8%;
+    animation-delay: 1s;
+}
+
+.balloon-4 {
+    left: 18%;
+    bottom: 12%;
+    animation-delay: 1.5s;
+}
+
+.balloon-5 {
+    right: 25%;
+    bottom: 10%;
+    animation-delay: 2s;
+}
+
+@keyframes balloonFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-18px) rotate(3deg);
+    }
+}
+
+.balloon-popped {
+    animation: balloonPop .35s ease forwards !important;
+    pointer-events: none;
+}
+
+@keyframes balloonPop {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    60% {
+        transform: scale(1.5);
+        opacity: .8;
+    }
+
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .game-balloon {
+        font-size: 52px;
+    }
+
+}
+
     </style>
 </head>
+
 <body class="relative min-h-screen text-purple-100 selection:bg-pink-500 selection:text-white">
 
-    <!-- LANDING POPUP MODAL SCREEN -->
-    <div id="welcome-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-pink-950/85 backdrop-blur-md p-4 transition-opacity duration-500">
-        <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-sm w-full text-center shadow-2xl border-4 border-pink-300 relative overflow-hidden">
-            
-            <div class="absolute -top-2 -left-2 text-2xl animate-bounce">❤️</div>
-            <div class="absolute top-2 -right-1 text-2xl animate-pulse">💖</div>
-	    <h1 class="font-handwriting text-3xl sm:text-4xl text-pink-600 font-bold mb-1">
-   		 Happy Birthday, Sania ✨
-	    </h1>
+    <!-- =========================
+         WELCOME MODAL
+         ========================= -->
 
-   <!-- Bubu & Dudu Birthday Cake Animated GIF -->
-   <div class="my-3 flex justify-center w-full">
-    <img
-        src="https://media1.tenor.com/m/jhVNIStBHy0AAAAd/bubu-dudu-birthday.gif"
-        alt="Bubu and Dudu Happy Birthday GIF"
-        class="w-64 h-44 object-contain rounded-2xl drop-shadow-md"
-        loading="eager"
-    >
-</div>
+    <div id="welcome-modal"
+         class="fixed inset-0 z-50 flex items-center justify-center
+                bg-pink-950/85 backdrop-blur-md p-4
+                transition-opacity duration-500">
 
-<p class="text-slate-700 font-semibold text-base mb-5">
-    Are you excited for your birthday surprise? 🧸✨
-</p>
+        <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-sm w-full
+                    text-center shadow-2xl border-4 border-pink-300
+                    relative overflow-hidden">
 
-            <!-- Choice Buttons (Yes & Moving No) -->
-            <div class="flex justify-center items-center gap-4 relative min-h-[50px]">
-                <button id="yes-btn" onclick="startMainContent()" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2.5 px-7 rounded-full shadow-lg transform hover:scale-110 active:scale-95 transition duration-200">
+            <div class="absolute -top-2 -left-2 text-2xl animate-bounce">
+                ❤️
+            </div>
+
+            <div class="absolute top-2 -right-1 text-2xl animate-pulse">
+                💖
+            </div>
+
+            <h1 class="font-handwriting text-3xl sm:text-4xl
+                       text-pink-600 font-bold mb-1">
+                Happy Birthday, Sania ✨
+            </h1>
+
+            <div class="my-3 flex justify-center w-full">
+                <img
+                    src="https://media1.tenor.com/m/jhVNIStBHy0AAAAd/bubu-dudu-birthday.gif"
+                    alt="Bubu and Dudu Happy Birthday GIF"
+                    class="w-64 h-44 object-contain rounded-2xl drop-shadow-md"
+                    loading="eager"
+                >
+            </div>
+
+            <p class="text-slate-700 font-semibold text-base mb-5">
+                Are you excited for your birthday surprise? 🧸✨
+            </p>
+
+            <div class="flex justify-center items-center gap-4
+                        relative min-h-[50px]">
+
+                <button
+                    id="yes-btn"
+                    onclick="startMainContent()"
+                    class="bg-pink-500 hover:bg-pink-600
+                           text-white font-bold py-2.5 px-7
+                           rounded-full shadow-lg transform
+                           hover:scale-110 active:scale-95
+                           transition duration-200">
+
                     Yes 💕
+
                 </button>
-                
-                <button id="no-btn" onmouseover="moveNoButton()" onclick="moveNoButton()" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2.5 px-7 rounded-full shadow transition duration-200">
+
+                <button
+                    id="no-btn"
+                    onmouseover="moveNoButton()"
+                    onclick="moveNoButton()"
+                    class="bg-gray-200 hover:bg-gray-300
+                           text-gray-700 font-bold py-2.5 px-7
+                           rounded-full shadow transition duration-200">
+
                     No 😜
+
                 </button>
+
             </div>
         </div>
     </div>
+	<!-- =========================
+     BALLOON POP GAME
+     ========================= -->
 
-    <!-- Sparkle Canvas Particles Background -->
-    <canvas id="particle-canvas" class="fixed inset-0 pointer-events-none z-30"></canvas>
+<div id="balloon-game"
+     class="fixed inset-0 z-[60] hidden
+            bg-gradient-to-br from-pink-950
+            via-purple-950 to-slate-950
+            flex items-center justify-center p-5">
 
-    <!-- Floating Audio & Hug Pill Bar -->
+    <div class="text-center w-full max-w-2xl">
+
+        <div class="mb-6">
+            <span class="font-handwriting text-3xl text-pink-300">
+                Chalo Saniaaa... 🎈
+            </span>
+
+            <h2 class="text-3xl sm:text-5xl font-bold text-white mt-2">
+                Pehle Balloons Pop Karo! 💕
+            </h2>
+
+            <p class="text-purple-200 mt-3">
+                Saare 5 balloons pop karo, phir surprise unlock hoga ✨
+            </p>
+
+            <div id="balloon-count"
+                 class="mt-4 inline-block px-5 py-2 rounded-full
+                        bg-pink-500/20 border border-pink-400/40
+                        text-pink-200 font-bold">
+                0 / 5 🎈
+            </div>
+        </div>
+
+        <div id="balloon-area"
+             class="relative h-[330px] w-full
+                    rounded-3xl overflow-hidden
+                    border border-pink-400/30
+                    bg-white/5 backdrop-blur-sm">
+
+            <button class="game-balloon balloon-1"
+                    onclick="popBalloon(this)">🎈</button>
+
+            <button class="game-balloon balloon-2"
+                    onclick="popBalloon(this)">🎈</button>
+
+            <button class="game-balloon balloon-3"
+                    onclick="popBalloon(this)">🎈</button>
+
+            <button class="game-balloon balloon-4"
+                    onclick="popBalloon(this)">🎈</button>
+
+            <button class="game-balloon balloon-5"
+                    onclick="popBalloon(this)">🎈</button>
+
+        </div>
+
+        <div id="balloon-success"
+             class="hidden mt-6">
+
+            <p class="font-handwriting text-3xl text-pink-300">
+                Yayy! Saare balloons pop ho gaye! 🎉💕
+            </p>
+
+            <button onclick="continueAfterBalloons()"
+                    class="mt-4 px-7 py-3
+                           bg-gradient-to-r from-pink-500
+                           to-rose-500 text-white font-bold
+                           rounded-full shadow-lg">
+                Ab Surprise Dekho ✨
+            </button>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+    <!-- PARTICLE CANVAS -->
+
+    <canvas id="particle-canvas"
+            class="fixed inset-0 pointer-events-none z-30">
+    </canvas>
+
+
+    <!-- TOP BUTTONS -->
+
     <div class="fixed top-5 right-5 z-40 flex items-center gap-2">
-        <button id="hug-btn" onclick="sendVirtualHug()" class="glass-card hover:bg-pink-500/20 text-pink-300 border border-pink-500/40 px-4 py-2.5 rounded-full shadow-lg transition duration-300 flex items-center gap-2 text-sm font-medium group active:scale-95">
-            <span class="group-hover:scale-125 transition-transform">🫂</span>
-            <span class="hidden sm:inline">Sending Hugs!</span>
+
+        <button
+            id="hug-btn"
+            onclick="sendVirtualHug()"
+            class="glass-card hover:bg-pink-500/20
+                   text-pink-300 border border-pink-500/40
+                   px-4 py-2.5 rounded-full shadow-lg
+                   transition duration-300 flex items-center
+                   gap-2 text-sm font-medium group active:scale-95">
+
+            <span class="group-hover:scale-125 transition-transform">
+                🫂
+            </span>
+
+            <span class="hidden sm:inline">
+                Sending Hugs!
+            </span>
+
         </button>
-        <button id="audio-toggle" onclick="toggleAudio()" class="glass-card hover:bg-purple-500/20 text-purple-300 border border-purple-500/40 p-3 rounded-full shadow-lg transition duration-300 flex items-center justify-center w-11 h-11 group active:scale-95" title="Play Birthday Music 🎶">
-            <i id="audio-icon" class="fas fa-music text-base group-hover:scale-110 transition-transform"></i>
+
+        <button
+            id="audio-toggle"
+            onclick="toggleAudio()"
+            class="glass-card hover:bg-purple-500/20
+                   text-purple-300 border border-purple-500/40
+                   p-3 rounded-full shadow-lg transition duration-300
+                   flex items-center justify-center w-11 h-11
+                   group active:scale-95"
+            title="Play Birthday Music 🎶">
+
+            <i id="audio-icon"
+               class="fas fa-music text-base
+                      group-hover:scale-110 transition-transform">
+            </i>
+
         </button>
     </div>
 
-    <!-- Main Container -->
-    <div class="relative z-10 max-w-5xl mx-auto px-4 py-8 sm:py-14 space-y-24">
 
-        <!-- Hero Header -->
-        <header class="text-center relative flex flex-col items-center justify-center pt-8">
-            <div class="absolute -top-12 w-80 h-80 bg-pink-600/20 rounded-full blur-[100px] pointer-events-none animate-pulse-glow"></div>
-            <div class="absolute top-20 w-80 h-80 bg-purple-600/20 rounded-full blur-[100px] pointer-events-none animate-pulse-glow" style="animation-delay: 2s;"></div>
+    <!-- MAIN CONTAINER -->
 
-            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-pink-500/15 border border-pink-500/30 text-pink-300 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-6 animate-pulse">
-                <i class="fas fa-sparkles text-pink-400"></i> Meri Sabse Favorite Person Ke Liye <i class="fas fa-sparkles text-pink-400"></i>
-            </span>
+    <div class="relative z-10 max-w-5xl mx-auto px-4
+                py-8 sm:py-14 space-y-24">
 
-            <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-2">
-                Happy Birthday,
-            </h1>
-            
-            <div class="flex items-center justify-center gap-2 mb-6 group cursor-pointer" onclick="focusNameInput()" title="Tap to edit name">
-                <span id="recipient-name" class="font-handwriting text-5xl sm:text-7xl md:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-rose-400 to-purple-300 px-3 py-1 outline-none border-b-2 border-dashed border-pink-500/30 hover:border-pink-400 transition" contenteditable="true" spellcheck="false">
-                    Saniaaa ✨
-                </span>
-                <i class="fas fa-pen text-pink-400/60 text-sm group-hover:text-pink-300 transition"></i>
+
+        <!-- =========================
+             HERO
+             ========================= -->
+
+        <header class="text-center relative flex flex-col
+                       items-center justify-center pt-8">
+
+            <div class="absolute -top-12 w-80 h-80
+                        bg-pink-600/20 rounded-full
+                        blur-[100px] pointer-events-none
+                        animate-pulse-glow">
             </div>
 
-            <p class="max-w-xl text-purple-200/90 text-base sm:text-lg font-light leading-relaxed mb-8">
-                Yeh chhota sa digital universe bas tumhare liye banaya hai! Pura sweet memories, secret notes aur dher saare pyaar se bhara hua. Enjoy your special day! 🎉 💕
+            <div class="absolute top-20 w-80 h-80
+                        bg-purple-600/20 rounded-full
+                        blur-[100px] pointer-events-none
+                        animate-pulse-glow"
+                 style="animation-delay:2s;">
+            </div>
+
+            <span class="inline-flex items-center gap-2 px-4 py-1.5
+                         rounded-full bg-pink-500/15
+                         border border-pink-500/30
+                         text-pink-300 text-xs sm:text-sm
+                         font-semibold tracking-wider uppercase mb-6 animate-pulse">
+
+                <i class="fas fa-sparkles text-pink-400"></i>
+
+                Meri Sabse Favorite Person Ke Liye
+
+                <i class="fas fa-sparkles text-pink-400"></i>
+
+            </span>
+
+            <h1 class="text-4xl sm:text-6xl md:text-7xl
+                       font-bold tracking-tight text-white mb-2">
+
+                Happy Birthday,
+
+            </h1>
+
+            <div class="flex items-center justify-center gap-2 mb-6
+                        group cursor-pointer"
+                 onclick="focusNameInput()"
+                 title="Tap to edit name">
+
+                <span
+                    id="recipient-name"
+                    class="font-handwriting text-5xl sm:text-7xl
+                           md:text-8xl text-transparent
+                           bg-clip-text bg-gradient-to-r
+                           from-pink-300 via-rose-400
+                           to-purple-300 px-3 py-1 outline-none
+                           border-b-2 border-dashed
+                           border-pink-500/30
+                           hover:border-pink-400 transition"
+                    contenteditable="true"
+                    spellcheck="false">
+
+                    Saniaaa ✨
+
+                </span>
+
+                <i class="fas fa-pen text-pink-400/60 text-sm
+                          group-hover:text-pink-300 transition">
+                </i>
+
+            </div>
+
+            <p class="max-w-xl text-purple-200/90
+                      text-base sm:text-lg font-light
+                      leading-relaxed mb-8">
+
+                Yeh chhota sa digital universe bas tumhare liye
+                banaya hai! Pura sweet memories, secret notes aur
+                dher saare pyaar se bhara hua.
+                Enjoy your special day! 🎉 💕
+
             </p>
 
             <div class="flex flex-wrap items-center justify-center gap-3">
-                <a href="#letter-section" class="px-6 py-3 bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-400 hover:to-rose-400 text-white font-medium rounded-full shadow-lg shadow-pink-500/25 transition duration-300 flex items-center gap-2 text-sm">
-                    <i class="fas fa-envelope-open-text"></i> Secret Letter Kholo
+
+                <a href="#letter-section"
+                   class="px-6 py-3 bg-gradient-to-r
+                          from-pink-500 to-rose-500
+                          hover:from-pink-400 hover:to-rose-400
+                          text-white font-medium rounded-full
+                          shadow-lg shadow-pink-500/25
+                          transition duration-300
+                          flex items-center gap-2 text-sm">
+
+                    <i class="fas fa-envelope-open-text"></i>
+                    Secret Letter Kholo
+
                 </a>
-                <a href="#cake-section" class="px-6 py-3 glass-card hover:bg-white/10 text-pink-200 border border-pink-500/30 font-medium rounded-full transition duration-300 flex items-center gap-2 text-sm">
-                    <i class="fas fa-birthday-cake text-pink-400"></i> Candle Bujhao
+
+                <a href="#cake-section"
+                   class="px-6 py-3 glass-card
+                          hover:bg-white/10 text-pink-200
+                          border border-pink-500/30
+                          font-medium rounded-full
+                          transition duration-300
+                          flex items-center gap-2 text-sm">
+
+                    <i class="fas fa-birthday-cake text-pink-400"></i>
+                    Candle Bujhao
+
                 </a>
+
             </div>
         </header>
 
-        <!-- Interactive Secret Letter Section -->
-        <section id="letter-section" class="flex flex-col items-center">
+
+        <!-- =========================
+             SECRET ENVELOPE
+             ========================= -->
+
+        <section id="letter-section"
+                 class="flex flex-col items-center">
+
             <div class="text-center mb-8">
-                <span class="font-handwriting text-3xl text-pink-300">Ek khaas note tumhare liye...</span>
-                <h2 class="text-2xl sm:text-3xl font-bold text-white">Birthday Envelope Kholo 💌</h2>
+
+                <span class="font-handwriting text-3xl
+                             text-pink-300">
+                    Ek khaas note tumhare liye...
+                </span>
+
+                <h2 class="text-2xl sm:text-3xl
+                           font-bold text-white">
+                    Birthday Envelope Kholo 💌
+                </h2>
+
             </div>
 
-            <div id="envelope-wrapper" class="relative w-full max-w-xl cursor-pointer group" onclick="toggleEnvelope()">
-                <div id="envelope-closed" class="glass-card rounded-3xl p-8 sm:p-12 text-center border-2 border-pink-500/40 relative overflow-hidden transition duration-500 transform group-hover:scale-[1.01]">
-                    <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-pink-500/10 rounded-full blur-2xl"></div>
-                    <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-pink-500/20 border border-pink-400/40 flex items-center justify-center text-pink-300 text-3xl shadow-inner animate-float">
+            <div id="envelope-wrapper"
+                 class="relative w-full max-w-xl
+                        cursor-pointer group"
+                 onclick="toggleEnvelope()">
+
+                <div id="envelope-closed"
+                     class="glass-card rounded-3xl p-8 sm:p-12
+                            text-center border-2 border-pink-500/40
+                            relative overflow-hidden
+                            transition duration-500
+                            transform group-hover:scale-[1.01]">
+
+                    <div class="absolute -right-10 -bottom-10
+                                w-40 h-40 bg-pink-500/10
+                                rounded-full blur-2xl">
+                    </div>
+
+                    <div class="w-20 h-20 mx-auto mb-4
+                                rounded-full bg-pink-500/20
+                                border border-pink-400/40
+                                flex items-center justify-center
+                                text-pink-300 text-3xl shadow-inner
+                                animate-float">
+
                         <i class="fas fa-heart"></i>
+
                     </div>
-                    <h3 class="font-handwriting text-3xl text-pink-200 mb-2">Tap karke unseal karo...</h3>
-                    <p class="text-xs sm:text-sm text-purple-300/80">Strictly reserved for my favorite person on earth! 💖</p>
+
+                    <h3 class="font-handwriting text-3xl
+                               text-pink-200 mb-2">
+                        Tap karke unseal karo...
+                    </h3>
+
+                    <p class="text-xs sm:text-sm
+                              text-purple-300/80">
+                        Strictly reserved for my favorite person
+                        on earth! 💖
+                    </p>
+
                 </div>
 
-                <div id="envelope-letter" class="hidden glass-card rounded-3xl p-6 sm:p-10 border-2 border-pink-400/50 shadow-2xl relative transition-all duration-700">
-                    <div class="flex justify-between items-center border-b border-pink-500/20 pb-4 mb-6">
-                        <div class="flex items-center gap-2 text-pink-300 font-handwriting text-2xl">
-                            <i class="fas fa-rose text-pink-400"></i> Dil Se Likha Hua Note
+                <div id="envelope-letter"
+                     class="hidden glass-card rounded-3xl
+                            p-6 sm:p-10 border-2
+                            border-pink-400/50 shadow-2xl
+                            relative transition-all duration-700">
+
+                    <div class="flex justify-between items-center
+                                border-b border-pink-500/20
+                                pb-4 mb-6">
+
+                        <div class="flex items-center gap-2
+                                    text-pink-300
+                                    font-handwriting text-2xl">
+
+                            <i class="fas fa-rose text-pink-400"></i>
+                            Dil Se Likha Hua Note
+
                         </div>
-                        <button onclick="event.stopPropagation(); toggleEnvelope();" class="text-purple-400 hover:text-white text-sm bg-purple-900/40 p-2 rounded-full">
+
+                        <button
+                            onclick="event.stopPropagation();
+                                     toggleEnvelope();"
+                            class="text-purple-400
+                                   hover:text-white text-sm
+                                   bg-purple-900/40 p-2
+                                   rounded-full">
+
                             <i class="fas fa-times"></i>
+
                         </button>
                     </div>
 
-                    <div class="space-y-4 font-sans text-purple-100/90 text-sm sm:text-base leading-relaxed">
-                        <p class="font-handwriting text-3xl text-pink-300 mb-2">Dearest Saniaaa, 🌸</p>
-                        <p>Happy Birthday! Main soch raha tha ki kya likhun jo bata sake ki tum kitni special ho, par honestly words me express karna mushkil hai.</p>
-                        <p>Thank you meri life me comfort person banne ke liye, meri safe space rehne ke liye aur itni saari pyari memories dene ke liye. Hamari late-night lambi baatein aur wo bina wajah ki pagal jaisi हंसी tumhare saath har ek second bohot magical lagta hai.</p>
-                        <p>Tumhare andar ek bohot pyaari aur soft warmth hai jo sabka din bright kar deti hai. Main bas yahi wish karta hu ki yeh naya saal tumhare liye bohot saara happiness, peace, success aur wo saare sapne pure kare jo tum dekhti ho!</p>
-                        <p class="pt-2 font-handwriting text-2xl text-pink-300">Har situation me hamesha tumhare saath hu! 💕</p>
+                    <div class="space-y-4 font-sans
+                                text-purple-100/90
+                                text-sm sm:text-base
+                                leading-relaxed">
+
+                        <p class="font-handwriting text-3xl
+                                  text-pink-300 mb-2">
+                            Dearest Saniaaa, 🌸
+                        </p>
+
+                        <p>
+                            Happy Birthday! Main soch raha tha ki
+                            kya likhun jo bata sake ki tum kitni
+                            special ho, par honestly words me
+                            express karna mushkil hai.
+                        </p>
+
+                        <p>
+                            Thank you meri life me comfort person
+                            banne ke liye, meri safe space rehne ke
+                            liye aur itni saari pyari memories dene
+                            ke liye.
+                        </p>
+
+                        <p>
+                            Tumhare saath har ek second bohot
+                            magical lagta hai.
+                        </p>
+
+                        <p class="pt-2 font-handwriting text-2xl
+                                  text-pink-300">
+                            Hamesha tumhare saath hu! 💕
+                        </p>
+
                     </div>
 
-                    <div class="mt-8 pt-4 border-t border-pink-500/20 flex flex-wrap justify-between items-center gap-3">
-                        <span class="text-xs text-pink-400/80 italic"><i class="fas fa-lock text-xs mr-1"></i> Strictly Heart-to-Heart</span>
-                        <button onclick="event.stopPropagation(); triggerSparkleBurst();" class="px-4 py-2 bg-pink-500/20 hover:bg-pink-500/30 text-pink-300 border border-pink-400/40 rounded-full text-xs font-semibold transition">
-                            <i class="fas fa-sparkles text-amber-300"></i> Sparkles & Magic Send Karo ✨
+                    <div class="mt-8 pt-4
+                                border-t border-pink-500/20
+                                flex flex-wrap justify-between
+                                items-center gap-3">
+
+                        <span class="text-xs text-pink-400/80 italic">
+                            <i class="fas fa-lock text-xs mr-1"></i>
+                            Strictly Heart-to-Heart
+                        </span>
+
+                        <button
+                            onclick="event.stopPropagation();
+                                     triggerSparkleBurst();"
+                            class="px-4 py-2
+                                   bg-pink-500/20
+                                   hover:bg-pink-500/30
+                                   text-pink-300
+                                   border border-pink-400/40
+                                   rounded-full text-xs
+                                   font-semibold transition">
+
+                            <i class="fas fa-sparkles text-amber-300"></i>
+                            Sparkles & Magic Send Karo ✨
+
                         </button>
+
                     </div>
+
                 </div>
+
             </div>
         </section>
 
-        <!-- Interactive Cake Section -->
-        <section id="cake-section" class="flex flex-col items-center">
+
+        <!-- =========================
+             CAKE
+             ========================= -->
+
+        <section id="cake-section"
+                 class="flex flex-col items-center">
+
             <div class="text-center mb-8">
-                <span class="font-handwriting text-3xl text-pink-300">Dil me ek secret wish maango...</span>
-                <h2 class="text-2xl sm:text-3xl font-bold text-white">Candles Bujhao Aur Wish Maango 🎂</h2>
-                <p class="text-xs sm:text-sm text-purple-300/80 mt-1">Cake par click karke candles blow out karo!</p>
+
+                <span class="font-handwriting text-3xl
+                             text-pink-300">
+                    Dil me ek secret wish maango...
+                </span>
+
+                <h2 class="text-2xl sm:text-3xl
+                           font-bold text-white">
+                    Candles Bujhao Aur Wish Maango 🎂
+                </h2>
+
+                <p class="text-xs sm:text-sm
+                          text-purple-300/80 mt-1">
+                    Cake par click karke candles blow out karo!
+                </p>
+
             </div>
 
-            <div class="glass-card rounded-3xl p-6 sm:p-10 border border-pink-500/30 w-full max-w-lg flex flex-col items-center text-center relative">
-                <div id="cake-status" class="mb-6 px-4 py-1.5 rounded-full bg-pink-500/10 border border-pink-500/30 text-pink-300 text-xs font-medium flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
-                    <span>Candles jal rahi hain! Tap karke bujhao.</span>
+            <div class="glass-card rounded-3xl p-6 sm:p-10
+                        border border-pink-500/30 w-full max-w-lg
+                        flex flex-col items-center text-center
+                        relative">
+
+                <div id="cake-status"
+                     class="mb-6 px-4 py-1.5 rounded-full
+                            bg-pink-500/10
+                            border border-pink-500/30
+                            text-pink-300 text-xs font-medium
+                            flex items-center gap-2">
+
+                    <span class="w-2 h-2 rounded-full
+                                 bg-amber-400 animate-ping">
+                    </span>
+
+                    <span>
+                        Candles jal rahi hain!
+                        Tap karke bujhao.
+                    </span>
+
                 </div>
 
-                <div class="relative cursor-pointer group my-2" onclick="blowoutCandles()" title="Candles bujhane ke liye tap karo!">
-                    <svg viewBox="0 0 300 300" class="w-64 sm:w-72 h-auto drop-shadow-[0_10px_25px_rgba(244,114,182,0.3)] transition transform group-hover:scale-105 duration-300">
-                        <ellipse cx="150" cy="270" rx="120" ry="14" fill="#33184a"/>
-                        <ellipse cx="150" cy="266" rx="115" ry="12" fill="#fbcfe8"/>
-                        <path d="M 55 200 C 55 180, 245 180, 245 200 L 238 262 C 238 266, 62 266, 62 262 Z" fill="#ec4899"/>
-                        <path d="M 55 200 C 55 215, 245 215, 245 200 L 245 212 C 245 227, 55 227, 55 212 Z" fill="#f472b6"/>
-                        <path d="M 85 130 C 85 115, 215 115, 215 130 L 206 195 C 206 200, 94 200, 94 195 Z" fill="#c084fc"/>
-                        
-                        <rect x="110" y="70" width="10" height="60" rx="3" fill="#38bdf8"/>
+                <div class="relative cursor-pointer group my-2"
+                     onclick="blowoutCandles()"
+                     title="Candles bujhane ke liye tap karo!">
+
+                    <svg viewBox="0 0 300 300"
+                         class="w-64 sm:w-72 h-auto
+                                drop-shadow-[0_10px_25px_rgba(244,114,182,0.3)]
+                                transition transform
+                                group-hover:scale-105 duration-300">
+
+                        <ellipse cx="150" cy="270"
+                                 rx="120" ry="14"
+                                 fill="#33184a"/>
+
+                        <ellipse cx="150" cy="266"
+                                 rx="115" ry="12"
+                                 fill="#fbcfe8"/>
+
+                        <path d="M 55 200 C 55 180, 245 180, 245 200
+                                 L 238 262 C 238 266, 62 266, 62 262 Z"
+                              fill="#ec4899"/>
+
+                        <path d="M 55 200 C 55 215, 245 215, 245 200
+                                 L 245 212 C 245 227, 55 227, 55 212 Z"
+                              fill="#f472b6"/>
+
+                        <path d="M 85 130 C 85 115, 215 115, 215 130
+                                 L 206 195 C 206 200, 94 200, 94 195 Z"
+                              fill="#c084fc"/>
+
+                        <rect x="110" y="70"
+                              width="10" height="60"
+                              rx="3" fill="#38bdf8"/>
+
                         <g class="candle-flame" id="flame-1">
-                            <path d="M 115 62 C 108 50, 105 45, 115 32 C 125 45, 122 50, 115 62 Z" fill="#fbbf24"/>
+                            <path d="M 115 62 C 108 50, 105 45, 115 32
+                                     C 125 45, 122 50, 115 62 Z"
+                                  fill="#fbbf24"/>
                         </g>
-                        <rect x="145" y="55" width="10" height="75" rx="3" fill="#f472b6"/>
+
+                        <rect x="145" y="55"
+                              width="10" height="75"
+                              rx="3" fill="#f472b6"/>
+
                         <g class="candle-flame" id="flame-2">
-                            <path d="M 150 47 C 143 35, 140 30, 150 17 C 160 30, 157 35, 150 47 Z" fill="#fbbf24"/>
+                            <path d="M 150 47 C 143 35, 140 30, 150 17
+                                     C 160 30, 157 35, 150 47 Z"
+                                  fill="#fbbf24"/>
                         </g>
-                        <rect x="180" y="70" width="10" height="60" rx="3" fill="#a78bfa"/>
+
+                        <rect x="180" y="70"
+                              width="10" height="60"
+                              rx="3" fill="#a78bfa"/>
+
                         <g class="candle-flame" id="flame-3">
-                            <path d="M 185 62 C 178 50, 175 45, 185 32 C 195 45, 192 50, 185 62 Z" fill="#fbbf24"/>
+                            <path d="M 185 62 C 178 50, 175 45, 185 32
+                                     C 195 45, 192 50, 185 62 Z"
+                                  fill="#fbbf24"/>
                         </g>
+
                     </svg>
                 </div>
 
                 <div class="mt-4 flex gap-3">
-                    <button onclick="blowoutCandles()" id="cake-btn" class="px-5 py-2.5 bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-400 hover:to-rose-400 text-white font-medium rounded-full shadow-md text-xs sm:text-sm flex items-center gap-2 transition">
-                        <i class="fas fa-wind"></i> Candles Bujhao
+
+                    <button
+                        onclick="blowoutCandles()"
+                        id="cake-btn"
+                        class="px-5 py-2.5
+                               bg-gradient-to-r
+                               from-pink-500 to-rose-500
+                               hover:from-pink-400
+                               hover:to-rose-400
+                               text-white font-medium
+                               rounded-full shadow-md
+                               text-xs sm:text-sm
+                               flex items-center gap-2
+                               transition">
+
+                        <i class="fas fa-wind"></i>
+                        Candles Bujhao
+
                     </button>
-                    <button onclick="relightCandles()" class="px-4 py-2.5 bg-purple-950/60 hover:bg-purple-900/60 text-purple-300 border border-purple-500/30 font-medium rounded-full text-xs sm:text-sm transition">
-                        <i class="fas fa-redo text-xs mr-1"></i> Phir Se Jalayein
+
+                    <button
+                        onclick="relightCandles()"
+                        class="px-4 py-2.5
+                               bg-purple-950/60
+                               hover:bg-purple-900/60
+                               text-purple-300
+                               border border-purple-500/30
+                               font-medium rounded-full
+                               text-xs sm:text-sm transition">
+
+                        <i class="fas fa-redo text-xs mr-1"></i>
+                        Phir Se Jalayein
+
                     </button>
+
                 </div>
 
-                <div id="secret-reward" class="hidden mt-6 p-4 rounded-2xl bg-gradient-to-r from-pink-500/20 to-purple-500/20 border border-pink-400/40 text-left w-full">
-                    <div class="flex items-center gap-2 text-pink-300 font-bold text-sm mb-1">
-                        <i class="fas fa-gift text-amber-300"></i> Wish Granted & Special Coupon Unlocked!
+                <div id="secret-reward"
+                     class="hidden mt-6 p-4 rounded-2xl
+                            bg-gradient-to-r
+                            from-pink-500/20
+                            to-purple-500/20
+                            border border-pink-400/40
+                            text-left w-full">
+
+                    <div class="flex items-center gap-2
+                                text-pink-300 font-bold
+                                text-sm mb-1">
+
+                        <i class="fas fa-gift text-amber-300"></i>
+                        Wish Granted & Special Coupon Unlocked!
+
                     </div>
-                    <p class="text-xs sm:text-sm text-purple-200 leading-relaxed">
-                        "Tumhara Special Birthday Coupon: <strong>1x Free Chocolates + Strawberry Ice Cream</strong> & <strong>Unlimited late night vent sessions</strong> valid for the entire year!" 🎟️✨
+
+                    <p class="text-xs sm:text-sm
+                              text-purple-200 leading-relaxed">
+
+                        "Tumhara Special Birthday Coupon:
+                        <strong>
+                            1x Free Chocolates + Strawberry Ice Cream
+                        </strong>
+                        &
+                        <strong>
+                            Unlimited late night vent sessions
+                        </strong>
+                        valid for the entire year!" 🎟️✨
+
                     </p>
+
                 </div>
+
             </div>
         </section>
 
-        <!-- Polaroid Memory Gallery Section -->
+
+        <!-- =========================
+             MEMORY LANE
+             ========================= -->
+
         <section class="flex flex-col items-center">
+
             <div class="text-center mb-10">
-                <span class="font-handwriting text-3xl text-pink-300">Hamari pyaari yaadein...</span>
-                <h2 class="text-2xl sm:text-3xl font-bold text-white">Memory Lane 📸</h2>
-                <p class="text-xs sm:text-sm text-purple-300/80 mt-1">Kuch khubsurat moments aur yaadein!</p>
+
+                <span class="font-handwriting text-3xl
+                             text-pink-300">
+                    Hamari pyaari yaadein...
+                </span>
+
+                <h2 class="text-2xl sm:text-3xl
+                           font-bold text-white">
+                    Memory Lane 📸
+                </h2>
+
+                <p class="text-xs sm:text-sm
+                          text-purple-300/80 mt-1">
+                    Kuch khubsurat moments aur yaadein!
+                </p>
+
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full max-w-4xl px-2">
-                <div class="bg-slate-100 text-slate-800 p-4 rounded-sm shadow-2xl transform -rotate-2 hover:rotate-0 hover:scale-105 transition duration-300 cursor-pointer relative group">
-                    <div class="washi-tape absolute -top-3 left-1/2 -translate-x-1/2 w-20 h-6 -rotate-1 z-10"></div>
-                    <div class="h-64 sm:h-56 bg-slate-200 overflow-hidden relative">
-                        <img id="polaroid-img-1" src="https://i.postimg.cc/ydgsXq02/Sania0-4.jpg" onerror="this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500&q=80'" alt="Memory 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="grid grid-cols-1 sm:grid-cols-2
+                        md:grid-cols-3 gap-8 w-full
+                        max-w-4xl px-2">
+
+                <div class="bg-slate-100 text-slate-800 p-4
+                            rounded-sm shadow-2xl transform -rotate-2
+                            hover:rotate-0 hover:scale-105
+                            transition duration-300 cursor-pointer
+                            relative group">
+
+                    <div class="washi-tape absolute -top-3
+                                left-1/2 -translate-x-1/2
+                                w-20 h-6 -rotate-1 z-10">
                     </div>
-                    <p class="font-handwriting text-2xl text-center text-slate-700 mt-3">Late night deep talks 🌙</p>
+
+                    <div class="h-64 sm:h-56 bg-slate-200
+                                overflow-hidden relative">
+
+                        <img
+                            src="https://i.postimg.cc/ydgsXq02/Sania0-4.jpg"
+                            onerror="this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500&q=80'"
+                            alt="Memory 1"
+                            class="w-full h-full object-cover
+                                   group-hover:scale-105
+                                   transition duration-500">
+
+                    </div>
+
+                    <p class="font-handwriting text-2xl
+                              text-center text-slate-700 mt-3">
+                        Late night deep talks 🌙
+                    </p>
+
                 </div>
 
-                <div class="bg-slate-100 text-slate-800 p-4 rounded-sm shadow-2xl transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-300 cursor-pointer relative group">
-                    <div class="washi-tape absolute -top-3 left-1/2 -translate-x-1/2 w-20 h-6 rotate-2 z-10"></div>
-                    <div class="h-64 sm:h-56 bg-slate-200 overflow-hidden relative">
-                        <img id="polaroid-img-2" src="https://i.postimg.cc/t4Zkj2t7/sania1.jpg" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&q=80'" alt="Memory 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+
+                <div class="bg-slate-100 text-slate-800 p-4
+                            rounded-sm shadow-2xl transform rotate-2
+                            hover:rotate-0 hover:scale-105
+                            transition duration-300 cursor-pointer
+                            relative group">
+
+                    <div class="washi-tape absolute -top-3
+                                left-1/2 -translate-x-1/2
+                                w-20 h-6 rotate-2 z-10">
                     </div>
-                    <p class="font-handwriting text-2xl text-center text-slate-700 mt-3">Uncontrollable laughs 😂</p>
+
+                    <div class="h-64 sm:h-56 bg-slate-200
+                                overflow-hidden relative">
+
+                        <img
+                            src="https://i.postimg.cc/t4Zkj2t7/sania1.jpg"
+                            onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&q=80'"
+                            alt="Memory 2"
+                            class="w-full h-full object-cover
+                                   group-hover:scale-105
+                                   transition duration-500">
+
+                    </div>
+
+                    <p class="font-handwriting text-2xl
+                              text-center text-slate-700 mt-3">
+                        Uncontrollable laughs 😂
+                    </p>
+
                 </div>
 
-                <div class="bg-slate-100 text-slate-800 p-4 rounded-sm shadow-2xl transform -rotate-1 hover:rotate-0 hover:scale-105 transition duration-300 cursor-pointer relative group sm:col-span-2 md:col-span-1 max-w-sm mx-auto md:max-w-none w-full">
-                    <div class="washi-tape absolute -top-3 left-1/2 -translate-x-1/2 w-20 h-6 -rotate-2 z-10"></div>
-                    <div class="h-64 sm:h-56 bg-slate-200 overflow-hidden relative">
-                        <img id="polaroid-img-3" src="https://i.postimg.cc/h4ZVtVGw/sania0-2.jpg" onerror="this.src='https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=500&q=80'" alt="Memory 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+
+                <div class="bg-slate-100 text-slate-800 p-4
+                            rounded-sm shadow-2xl transform -rotate-1
+                            hover:rotate-0 hover:scale-105
+                            transition duration-300 cursor-pointer
+                            relative group sm:col-span-2
+                            md:col-span-1 max-w-sm mx-auto
+                            md:max-w-none w-full">
+
+                    <div class="washi-tape absolute -top-3
+                                left-1/2 -translate-x-1/2
+                                w-20 h-6 -rotate-2 z-10">
                     </div>
-                    <p class="font-handwriting text-2xl text-center text-slate-700 mt-3">Making days brighter ✨</p>
+
+                    <div class="h-64 sm:h-56 bg-slate-200
+                                overflow-hidden relative">
+
+                        <img
+                            src="https://i.postimg.cc/h4ZVtVGw/sania0-2.jpg"
+                            onerror="this.src='https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=500&q=80'"
+                            alt="Memory 3"
+                            class="w-full h-full object-cover
+                                   group-hover:scale-105
+                                   transition duration-500">
+
+                    </div>
+
+                    <p class="font-handwriting text-2xl
+                              text-center text-slate-700 mt-3">
+                        Making days brighter ✨
+                    </p>
+
                 </div>
+
             </div>
         </section>
 
-        <!-- 4 Reasons Section -->
+
+        <!-- =========================
+             4 REASONS
+             ========================= -->
+
         <section class="flex flex-col items-center">
+
             <div class="text-center mb-10">
-                <span class="font-handwriting text-3xl text-pink-300">Kyun tum itni pyaari ho...</span>
-                <h2 class="text-2xl sm:text-3xl font-bold text-white">4 Reasons Why You Are So Special 💕</h2>
-                <p class="text-xs sm:text-sm text-purple-300/80 mt-1">Cards par click/tap karke secretly message read karo!</p>
+
+                <span class="font-handwriting text-3xl
+                             text-pink-300">
+                    Kyun tum itni pyaari ho...
+                </span>
+
+                <h2 class="text-2xl sm:text-3xl
+                           font-bold text-white">
+                    4 Reasons Why You Are So Special 💕
+                </h2>
+
+                <p class="text-xs sm:text-sm
+                          text-purple-300/80 mt-1">
+                    Cards par click/tap karke secretly
+                    message read karo!
+                </p>
+
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-4xl px-2">
-                <div class="perspective-1000 h-64 w-full cursor-pointer group" onclick="flipCard(this)">
-                    <div class="card-inner relative w-full h-full transform-style-3d rounded-3xl">
-                        <div class="backface-hidden absolute inset-0 glass-card rounded-3xl p-6 flex flex-col justify-between items-center text-center border-2 border-pink-500/40 hover:border-pink-400 transition shadow-xl">
-                            <div class="w-12 h-12 rounded-2xl bg-pink-500/20 border border-pink-400/40 flex items-center justify-center text-pink-300 text-2xl">
+            <div class="grid grid-cols-1 sm:grid-cols-2
+                        gap-6 w-full max-w-4xl px-2">
+
+                <!-- CARD 1 -->
+
+                <div class="perspective-1000 h-64 w-full
+                            cursor-pointer group"
+                     onclick="flipCard(this)">
+
+                    <div class="card-inner relative w-full h-full
+                                transform-style-3d rounded-3xl">
+
+                        <div class="backface-hidden absolute inset-0
+                                    glass-card rounded-3xl p-6
+                                    flex flex-col justify-between
+                                    items-center text-center
+                                    border-2 border-pink-500/40
+                                    hover:border-pink-400
+                                    transition shadow-xl">
+
+                            <div class="w-12 h-12 rounded-2xl
+                                        bg-pink-500/20
+                                        border border-pink-400/40
+                                        flex items-center justify-center
+                                        text-pink-300 text-2xl">
                                 ✨
                             </div>
+
                             <div>
-                                <h3 class="font-handwriting text-3xl text-pink-200 mb-1">Reason #1</h3>
-                                <p class="font-bold text-lg text-white">Tumhari Pyaari Smile</p>
+                                <h3 class="font-handwriting text-3xl
+                                           text-pink-200 mb-1">
+                                    Reason #1
+                                </h3>
+
+                                <p class="font-bold text-lg text-white">
+                                    Tumhari Pyaari Smile
+                                </p>
                             </div>
-                            <span class="text-xs text-pink-300/80 bg-pink-500/10 px-3 py-1 rounded-full border border-pink-500/20">
-                                <i class="fas fa-hand-pointer mr-1"></i> Tap to flip & read
+
+                            <span class="text-xs text-pink-300/80
+                                         bg-pink-500/10 px-3 py-1
+                                         rounded-full
+                                         border border-pink-500/20">
+
+                                <i class="fas fa-hand-pointer mr-1"></i>
+                                Tap to flip & read
+
                             </span>
+
                         </div>
-                        <div class="backface-hidden rotate-y-180 absolute inset-0 bg-gradient-to-br from-pink-900/90 to-purple-950/90 rounded-3xl p-6 flex flex-col justify-center text-center border-2 border-rose-400/60 shadow-2xl backdrop-blur-lg">
-                            <h4 class="font-handwriting text-2xl text-pink-300 mb-2">Tumhari Smile</h4>
-                            <p class="text-xs sm:text-sm text-purple-100/90 leading-relaxed font-light">
-                                Seriously, jab tum hasti ho na toh pura mahaul bright ho jata hai! Tumhari smile me ek aisi magic energy hai jo kisi ka bhi bura din ek second me achha kar sakti hai. 😊
+
+                        <div class="backface-hidden rotate-y-180
+                                    absolute inset-0
+                                    bg-gradient-to-br
+                                    from-pink-900/90
+                                    to-purple-950/90
+                                    rounded-3xl p-6
+                                    flex flex-col justify-center
+                                    text-center
+                                    border-2 border-rose-400/60
+                                    shadow-2xl backdrop-blur-lg">
+
+                            <h4 class="font-handwriting text-2xl
+                                       text-pink-300 mb-2">
+                                Tumhari Smile
+                            </h4>
+
+                            <p class="text-xs sm:text-sm
+                                      text-purple-100/90
+                                      leading-relaxed font-light">
+
+                                Seriously, jab tum hasti ho na
+                                toh pura mahaul bright ho jata hai!
+                                Tumhari smile me ek aisi magic energy
+                                hai jo kisi ka bhi bura din ek second
+                                me achha kar sakti hai. 😊
+
                             </p>
+
                         </div>
                     </div>
                 </div>
 
-                <div class="perspective-1000 h-64 w-full cursor-pointer group" onclick="flipCard(this)">
-                    <div class="card-inner relative w-full h-full transform-style-3d rounded-3xl">
-                        <div class="backface-hidden absolute inset-0 glass-card rounded-3xl p-6 flex flex-col justify-between items-center text-center border-2 border-purple-500/40 hover:border-purple-400 transition shadow-xl">
-                            <div class="w-12 h-12 rounded-2xl bg-purple-500/20 border border-purple-400/40 flex items-center justify-center text-purple-300 text-2xl">
+
+                <!-- CARD 2 -->
+
+                <div class="perspective-1000 h-64 w-full
+                            cursor-pointer group"
+                     onclick="flipCard(this)">
+
+                    <div class="card-inner relative w-full h-full
+                                transform-style-3d rounded-3xl">
+
+                        <div class="backface-hidden absolute inset-0
+                                    glass-card rounded-3xl p-6
+                                    flex flex-col justify-between
+                                    items-center text-center
+                                    border-2 border-purple-500/40
+                                    hover:border-purple-400
+                                    transition shadow-xl">
+
+                            <div class="w-12 h-12 rounded-2xl
+                                        bg-purple-500/20
+                                        border border-purple-400/40
+                                        flex items-center justify-center
+                                        text-purple-300 text-2xl">
                                 🌸
                             </div>
+
                             <div>
-                                <h3 class="font-handwriting text-3xl text-purple-200 mb-1">Reason #2</h3>
-                                <p class="font-bold text-lg text-white">Sabse Cute Comfort Person</p>
+                                <h3 class="font-handwriting text-3xl
+                                           text-purple-200 mb-1">
+                                    Reason #2
+                                </h3>
+
+                                <p class="font-bold text-lg text-white">
+                                    Sabse Cute Comfort Person
+                                </p>
                             </div>
-                            <span class="text-xs text-purple-300/80 bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/20">
-                                <i class="fas fa-hand-pointer mr-1"></i> Tap to flip & read
+
+                            <span class="text-xs text-purple-300/80
+                                         bg-purple-500/10 px-3 py-1
+                                         rounded-full
+                                         border border-purple-500/20">
+
+                                <i class="fas fa-hand-pointer mr-1"></i>
+                                Tap to flip & read
+
                             </span>
+
                         </div>
-                        <div class="backface-hidden rotate-y-180 absolute inset-0 bg-gradient-to-br from-purple-900/90 to-pink-950/90 rounded-3xl p-6 flex flex-col justify-center text-center border-2 border-purple-400/60 shadow-2xl backdrop-blur-lg">
-                            <h4 class="font-handwriting text-2xl text-purple-300 mb-2">My Comfort Person</h4>
-                            <p class="text-xs sm:text-sm text-purple-100/90 leading-relaxed font-light">
-                                Tumse baatein karke hamesha lagta hai ki koi sach me samjhta hai. Bina kisi judgment ke sunna, itni softness ke saath care karna... tum sach me meri safe space ho Saniaaa! 🤗
+
+                        <div class="backface-hidden rotate-y-180
+                                    absolute inset-0
+                                    bg-gradient-to-br
+                                    from-purple-900/90
+                                    to-pink-950/90
+                                    rounded-3xl p-6
+                                    flex flex-col justify-center
+                                    text-center
+                                    border-2 border-purple-400/60
+                                    shadow-2xl backdrop-blur-lg">
+
+                            <h4 class="font-handwriting text-2xl
+                                       text-purple-300 mb-2">
+                                My Comfort Person
+                            </h4>
+
+                            <p class="text-xs sm:text-sm
+                                      text-purple-100/90
+                                      leading-relaxed font-light">
+
+                                Tumse baatein karke hamesha lagta hai
+                                ki koi sach me samjhta hai.
+                                Bina kisi judgment ke sunna,
+                                itni softness ke saath care karna...
+                                tum sach me meri safe space ho
+                                Saniaaa! 🤗
+
                             </p>
+
                         </div>
                     </div>
                 </div>
 
-                <div class="perspective-1000 h-64 w-full cursor-pointer group" onclick="flipCard(this)">
-                    <div class="card-inner relative w-full h-full transform-style-3d rounded-3xl">
-                        <div class="backface-hidden absolute inset-0 glass-card rounded-3xl p-6 flex flex-col justify-between items-center text-center border-2 border-rose-500/40 hover:border-rose-400 transition shadow-xl">
-                            <div class="w-12 h-12 rounded-2xl bg-rose-500/20 border border-rose-400/40 flex items-center justify-center text-rose-300 text-2xl">
+
+                <!-- CARD 3 -->
+
+                <div class="perspective-1000 h-64 w-full
+                            cursor-pointer group"
+                     onclick="flipCard(this)">
+
+                    <div class="card-inner relative w-full h-full
+                                transform-style-3d rounded-3xl">
+
+                        <div class="backface-hidden absolute inset-0
+                                    glass-card rounded-3xl p-6
+                                    flex flex-col justify-between
+                                    items-center text-center
+                                    border-2 border-rose-500/40
+                                    hover:border-rose-400
+                                    transition shadow-xl">
+
+                            <div class="w-12 h-12 rounded-2xl
+                                        bg-rose-500/20
+                                        border border-rose-400/40
+                                        flex items-center justify-center
+                                        text-rose-300 text-2xl">
                                 💬
                             </div>
+
                             <div>
-                                <h3 class="font-handwriting text-3xl text-rose-200 mb-1">Reason #3</h3>
-                                <p class="font-bold text-lg text-white">Late Night Non-Stop Bakbak</p>
+                                <h3 class="font-handwriting text-3xl
+                                           text-rose-200 mb-1">
+                                    Reason #3
+                                </h3>
+
+                                <p class="font-bold text-lg text-white">
+                                    Late Night Non-Stop Bakbak
+                                </p>
                             </div>
-                            <span class="text-xs text-rose-300/80 bg-rose-500/10 px-3 py-1 rounded-full border border-rose-500/20">
-                                <i class="fas fa-hand-pointer mr-1"></i> Tap to flip & read
+
+                            <span class="text-xs text-rose-300/80
+                                         bg-rose-500/10 px-3 py-1
+                                         rounded-full
+                                         border border-rose-500/20">
+
+                                <i class="fas fa-hand-pointer mr-1"></i>
+                                Tap to flip & read
+
                             </span>
+
                         </div>
-                        <div class="backface-hidden rotate-y-180 absolute inset-0 bg-gradient-to-br from-rose-950/90 to-purple-900/90 rounded-3xl p-6 flex flex-col justify-center text-center border-2 border-rose-400/60 shadow-2xl backdrop-blur-lg">
-                            <h4 class="font-handwriting text-2xl text-rose-300 mb-2">Unfiltered Conversations</h4>
-                            <p class="text-xs sm:text-sm text-purple-100/90 leading-relaxed font-light">
-                                Wo raat-raat bhar random baatein karna, life ke baare me discuss karna... tumhare saath time ka pata hi nahi chalta. Those moments are priceless! ✨
+
+                        <div class="backface-hidden rotate-y-180
+                                    absolute inset-0
+                                    bg-gradient-to-br
+                                    from-rose-950/90
+                                    to-purple-900/90
+                                    rounded-3xl p-6
+                                    flex flex-col justify-center
+                                    text-center
+                                    border-2 border-rose-400/60
+                                    shadow-2xl backdrop-blur-lg">
+
+                            <h4 class="font-handwriting text-2xl
+                                       text-rose-300 mb-2">
+                                Unfiltered Conversations
+                            </h4>
+
+                            <p class="text-xs sm:text-sm
+                                      text-purple-100/90
+                                      leading-relaxed font-light">
+
+                                Wo raat-raat bhar random baatein
+                                karna, life ke baare me discuss
+                                karna... tumhare saath time ka pata
+                                hi nahi chalta.
+                                Those moments are priceless! ✨
+
                             </p>
+
                         </div>
                     </div>
                 </div>
 
-                <div class="perspective-1000 h-64 w-full cursor-pointer group" onclick="flipCard(this)">
-                    <div class="card-inner relative w-full h-full transform-style-3d rounded-3xl">
-                        <div class="backface-hidden absolute inset-0 glass-card rounded-3xl p-6 flex flex-col justify-between items-center text-center border-2 border-pink-500/40 hover:border-pink-400 transition shadow-xl">
-                            <div class="w-12 h-12 rounded-2xl bg-pink-500/20 border border-pink-400/40 flex items-center justify-center text-pink-300 text-2xl">
+
+                <!-- CARD 4 -->
+
+                <div class="perspective-1000 h-64 w-full
+                            cursor-pointer group"
+                     onclick="flipCard(this)">
+
+                    <div class="card-inner relative w-full h-full
+                                transform-style-3d rounded-3xl">
+
+                        <div class="backface-hidden absolute inset-0
+                                    glass-card rounded-3xl p-6
+                                    flex flex-col justify-between
+                                    items-center text-center
+                                    border-2 border-pink-500/40
+                                    hover:border-pink-400
+                                    transition shadow-xl">
+
+                            <div class="w-12 h-12 rounded-2xl
+                                        bg-pink-500/20
+                                        border border-pink-400/40
+                                        flex items-center justify-center
+                                        text-pink-300 text-2xl">
                                 👑
                             </div>
+
                             <div>
-                                <h3 class="font-handwriting text-3xl text-pink-200 mb-1">Reason #4</h3>
-                                <p class="font-bold text-lg text-white">Endless Support & Pure Heart</p>
+                                <h3 class="font-handwriting text-3xl
+                                           text-pink-200 mb-1">
+                                    Reason #4
+                                </h3>
+
+                                <p class="font-bold text-lg text-white">
+                                    Endless Support & Pure Heart
+                                </p>
                             </div>
-                            <span class="text-xs text-pink-300/80 bg-pink-500/10 px-3 py-1 rounded-full border border-pink-500/20">
-                                <i class="fas fa-hand-pointer mr-1"></i> Tap to flip & read
+
+                            <span class="text-xs text-pink-300/80
+                                         bg-pink-500/10 px-3 py-1
+                                         rounded-full
+                                         border border-pink-500/20">
+
+                                <i class="fas fa-hand-pointer mr-1"></i>
+                                Tap to flip & read
+
                             </span>
+
                         </div>
-                        <div class="backface-hidden rotate-y-180 absolute inset-0 bg-gradient-to-br from-pink-950/90 to-rose-900/90 rounded-3xl p-6 flex flex-col justify-center text-center border-2 border-pink-400/60 shadow-2xl backdrop-blur-lg">
-                            <h4 class="font-handwriting text-2xl text-pink-300 mb-2">Saccha Dil & Support</h4>
-                            <p class="text-xs sm:text-sm text-purple-100/90 leading-relaxed font-light">
-                                Tum jitni genuine ho, utna aaj kal koi nahi hota. Chahe achha waqt ho ya mushkil, tum hamesha support karne ke liye taiyar rehti ho. Your kind heart is what makes you one in a million! 💖
+
+                        <div class="backface-hidden rotate-y-180
+                                    absolute inset-0
+                                    bg-gradient-to-br
+                                    from-pink-950/90
+                                    to-rose-900/90
+                                    rounded-3xl p-6
+                                    flex flex-col justify-center
+                                    text-center
+                                    border-2 border-pink-400/60
+                                    shadow-2xl backdrop-blur-lg">
+
+                            <h4 class="font-handwriting text-2xl
+                                       text-pink-300 mb-2">
+                                Saccha Dil & Support
+                            </h4>
+
+                            <p class="text-xs sm:text-sm
+                                      text-purple-100/90
+                                      leading-relaxed font-light">
+
+                                Tum jitni genuine ho, utna aaj kal
+                                koi nahi hota. Chahe achha waqt ho
+                                ya mushkil, tum hamesha support
+                                karne ke liye taiyar rehti ho.
+                                Your kind heart is what makes you
+                                one in a million! 💖
+
                             </p>
+
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
-        <!-- Complete Best Friend Letter Section -->
+
+        <!-- ==================================================
+             UPDATED SECTION
+             SANIAAA KE NAAM PYAARA PAIGAM
+             ================================================== -->
+
         <section class="flex flex-col items-center relative">
-            <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-96 h-96 bg-pink-500/15 rounded-full blur-[120px] pointer-events-none"></div>
+
+            <div class="absolute -top-10 left-1/2
+                        -translate-x-1/2 w-96 h-96
+                        bg-pink-500/15 rounded-full
+                        blur-[120px] pointer-events-none">
+            </div>
+
 
             <div class="text-center mb-10 relative z-10">
-                <span class="font-handwriting text-3.5xl text-pink-300">Ek aakhri aur sabse pyara letter...</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">The Best Friend Letter 💌</h2>
-                <p class="text-xs sm:text-sm text-purple-300/80 mt-2">Dhyan se padhna, yeh pure dil se likha hai!</p>
+
+                <span class="font-handwriting text-3xl
+                             text-pink-300">
+                    Ek aakhri aur sabse pyara letter...
+                </span>
+
+                <h2 class="text-3xl sm:text-4xl
+                           font-extrabold text-white
+                           tracking-tight">
+                    The Best Friend Letter 💌
+                </h2>
+
+                <p class="text-xs sm:text-sm
+                          text-purple-300/80 mt-2">
+                    Dhyan se padhna, yeh pure dil se likha hai!
+                </p>
+
             </div>
 
-            <div class="glass-card rounded-3xl p-8 sm:p-12 border-2 border-pink-400/40 w-full max-w-3xl relative shadow-[0_0_50px_rgba(244,114,182,0.15)]">
-                <div class="absolute -top-7 right-8 w-14 h-14 bg-gradient-to-br from-rose-600 to-pink-700 rounded-full border-2 border-pink-300 shadow-lg flex items-center justify-center text-amber-200 text-xl font-bold animate-float">
+
+            <!-- LETTER -->
+
+            <div class="sania-letter glass-card rounded-3xl
+                        p-6 sm:p-10 border-2 border-pink-400/40
+                        w-full max-w-3xl relative
+                        shadow-[0_0_50px_rgba(244,114,182,0.15)]">
+
+
+                <!-- CROWN -->
+
+                <div class="absolute -top-7 right-8 w-14 h-14
+                            bg-gradient-to-br from-rose-600
+                            to-pink-700 rounded-full
+                            border-2 border-pink-300 shadow-lg
+                            flex items-center justify-center
+                            text-amber-200 text-xl font-bold
+                            animate-float">
+
                     <i class="fas fa-crown text-base"></i>
+
                 </div>
 
-                <div class="border-b border-pink-500/20 pb-6 mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+
+                <!-- HEADER -->
+
+                <div class="border-b border-pink-500/20
+                            pb-6 mb-7
+                            flex flex-col sm:flex-row
+                            sm:items-center
+                            justify-between gap-4">
+
                     <div>
-                        <span class="text-xs font-semibold uppercase tracking-widest text-pink-400">Personal & Confidential</span>
-                        <h3 class="font-handwriting text-4xl text-pink-200 mt-1">Saniaaa Ke Naam Pyaara Paigam</h3>
+
+                        <span class="text-xs font-semibold
+                                     uppercase tracking-widest
+                                     text-pink-400">
+
+                            Personal & Confidential
+
+                        </span>
+
+                        <h3 class="font-handwriting text-4xl
+                                   text-pink-200 mt-1">
+
+                            Saniaaa Ke Naam Pyaara Paigam
+
+                        </h3>
+
                     </div>
-                    <span class="text-xs text-purple-300/70 bg-purple-900/40 border border-purple-500/30 px-3 py-1.5 rounded-full self-start sm:self-auto">
-                        <i class="far fa-calendar-alt mr-1"></i> Today's Special Edition
+
+
+                    <span class="text-xs text-purple-300/70
+                                 bg-purple-900/40
+                                 border border-purple-500/30
+                                 px-3 py-1.5 rounded-full
+                                 self-start sm:self-auto">
+
+                        <i class="far fa-calendar-alt mr-1"></i>
+                        Today's Special Edition
+
                     </span>
+
                 </div>
 
-                <div class="space-y-5 text-purple-100/90 text-base sm:text-lg leading-relaxed font-sans font-light">
-                    <p class="font-handwriting text-3.5xl text-pink-300 leading-none">Pyaari Saniaaa,</p>
-                    <p>
-                        Aapki life me yeh birthday bohot saari khushiyan aur safalta lekar aaye. Tum sach me ek amazing insaan ho aur mujhe bohot proud feel hota hai ki tum meri friend ho!
+
+                <!-- =========================================
+                     EXACT LETTER CONTENT
+                     ========================================= -->
+
+                <div class="sania-letter-content
+                            font-sans font-light">
+
+                    <p class="font-handwriting text-4xl
+                              text-pink-300 mb-6 leading-none">
+
+                        Pyaari Saniaaa, 🌸
+
                     </p>
-                    <p>
-                        Hamesha aise hi muskurate raho aur jo bhi tumhare sapne hain unhe pura karo. Once again, a very Happy Birthday Saniaaa! 🎉✨ 💕
+
+
+                    <p class="mb-6">
+
+                        Agle kuch minutes ke liye bas shanti se
+                        yeh padhna. Life me bohot saare log aate
+                        hain aur jaate hain, par kuch log aise hote
+                        hain jo aate hi aapki duniya ko aur bhi
+                        khubsurat bana dete hain.
+                        Tum mere liye bilkul wahi ho.
+
                     </p>
+
+
+                    <p class="mb-6">
+
+                        Mujhe yaad hai jab hamari dosti shuru hui
+                        thi, kabhi socha nahi tha ki tum meri life
+                        ka itna important part ban jaogi.
+                        Tumhari nadaniyan, tumhara cute gussa,
+                        tumhara har baat pe care dikhana,
+                        aur wo sweet hassi...
+                        yeh sab chizein tumhe sabse alag banati hain.
+
+                    </p>
+
+
+                    <!-- =========================
+                         QUOTE BOX
+                         ========================= -->
+
+                    <div class="sania-quote">
+
+                        <p>
+
+                            “Dosti wahi hoti hai jahan lafzon ki
+                            zaroorat na pade, aur tumhare saath
+                            mujhe kabhi dikhawa karne ki
+                            zaroorat nahi padi.”
+
+                        </p>
+
+                    </div>
+
+
+                    <p class="mb-6">
+
+                        Main bhagwan se bas yahi pray karta hu ki
+                        tumhari life hamesha khushiyon se bhari
+                        rahe. Tum jo bhi banna chahti ho, jahan
+                        bhi jana chahti ho, tumhe har jagah
+                        kamyabi mile.
+
+                    </p>
+
+
+                    <p class="mb-6">
+
+                        Kabhi agar udaas ho ya akela feel ho,
+                        toh bas itna yaad rakhna ki tumhara yeh
+                        dost hamesha ek call ki doori par khada hai.
+
+                    </p>
+
+
+                    <p class="sania-ending">
+
+                        Thank you for being you.
+                        Life is so much sweeter with you around! 💕
+
+                    </p>
+
                 </div>
+
+
+                <!-- FOOTER -->
+
+                <div class="mt-8 pt-5
+                            border-t border-pink-500/20
+                            flex flex-wrap justify-between
+                            items-center gap-3">
+
+                    <span class="text-xs text-pink-400/80 italic">
+
+                        <i class="fas fa-heart text-xs mr-1"></i>
+                        From the heart, just for you
+
+                    </span>
+
+
+                    <button
+                        onclick="triggerSparkleBurst()"
+                        class="px-4 py-2 bg-pink-500/20
+                               hover:bg-pink-500/30
+                               text-pink-300
+                               border border-pink-400/40
+                               rounded-full text-xs
+                               font-semibold transition">
+
+                        <i class="fas fa-sparkles
+                                  text-amber-300"></i>
+
+                        Sparkles & Magic Send Karo ✨
+
+                    </button>
+
+                </div>
+
             </div>
+
         </section>
 
     </div>
 
 
-        <!-- FINAL GIFT SECTION -->
-        <section id="final-gift-section" class="flex flex-col items-center gift-scene scroll-mt-10">
-            <div class="text-center mb-8">
-                <span class="font-handwriting text-3xl text-pink-300">One Last Thing...</span>
-                <h2 class="text-2xl sm:text-3xl font-bold text-white">Tumhare liye ek chhota sa gift 🎁</h2>
-                <p class="text-xs sm:text-sm text-purple-300/80 mt-2">Tap the gift to open it 💕</p>
+    <!-- =========================
+         FINAL GIFT
+         ========================= -->
+
+    <section id="final-gift-section"
+             class="flex flex-col items-center
+                    gift-scene scroll-mt-10">
+
+        <div class="text-center mb-8">
+
+            <span class="font-handwriting text-3xl
+                         text-pink-300">
+                One Last Thing...
+            </span>
+
+            <h2 class="text-2xl sm:text-3xl
+                       font-bold text-white">
+                Tumhare liye ek chhota sa gift 🎁
+            </h2>
+
+            <p class="text-xs sm:text-sm
+                      text-purple-300/80 mt-2">
+                Tap the gift to open it 💕
+            </p>
+
+        </div>
+
+
+        <div id="final-gift-closed"
+             class="glass-card rounded-3xl p-10 sm:p-14
+                    border-2 border-pink-400/40
+                    w-full max-w-xl text-center
+                    relative overflow-hidden">
+
+            <div class="absolute top-8 right-10 w-9 h-9
+                        rounded-full bg-pink-500 text-white
+                        flex items-center justify-center
+                        font-bold shadow-lg
+                        shadow-pink-500/30">
+                2
             </div>
 
-            <div id="final-gift-closed" class="glass-card rounded-3xl p-10 sm:p-14 border-2 border-pink-400/40 w-full max-w-xl text-center relative overflow-hidden">
-                <div class="absolute top-8 right-10 w-9 h-9 rounded-full bg-pink-500 text-white flex items-center justify-center font-bold shadow-lg shadow-pink-500/30">2</div>
-                <div class="gift-box-wrap mt-10 mb-8">
-                    <div class="gift-box" id="gift-box" onclick="openFinalGift()" role="button" tabindex="0" aria-label="Open birthday gift">
-                        <div class="gift-glow"></div>
-                        <div class="gift-base"></div>
-                        <div class="gift-ribbon-v"></div>
-                        <div class="gift-ribbon-h"></div>
-                        <div class="gift-lid"></div>
-                        <div class="gift-bow"></div>
-                    </div>
+
+            <div class="gift-box-wrap mt-10 mb-8">
+
+                <div class="gift-box"
+                     id="gift-box"
+                     onclick="openFinalGift()"
+                     role="button"
+                     tabindex="0"
+                     aria-label="Open birthday gift">
+
+                    <div class="gift-glow"></div>
+                    <div class="gift-base"></div>
+                    <div class="gift-ribbon-v"></div>
+                    <div class="gift-ribbon-h"></div>
+                    <div class="gift-lid"></div>
+                    <div class="gift-bow"></div>
+
                 </div>
-                <p class="font-handwriting text-2xl text-pink-200">Tap the gift 🎀</p>
+
             </div>
 
-            <div id="final-gift-reveal" class="gift-reveal glass-card rounded-3xl p-6 sm:p-10 border-2 border-pink-400/50 w-full max-w-xl flex-col items-center text-center shadow-2xl mt-6">
-                <span class="font-handwriting text-3xl text-pink-300 mb-2">For You, Saniaaa 💖</span>
-                <h3 class="text-2xl sm:text-3xl font-bold text-white mb-5">Happy Birthday! 🎂✨</h3>
-                <div class="w-full flex justify-center rounded-2xl overflow-hidden bg-pink-950/30 p-3 border border-pink-400/20">
-                    <img src="https://media1.tenor.com/m/8cS-3p8_PVIAAAAd/happy-birthday-teddy-bear.gif" alt="Animated teddy bear saying Happy Birthday" class="w-64 h-64 sm:w-80 sm:h-80 object-contain rounded-xl" loading="eager">
-                </div>
-                <p class="font-handwriting text-2xl text-pink-200 mt-5">Hope your day is as cute and special as you are! 🧸💗</p>
-                <button onclick="triggerSparkleBurst()" class="mt-5 px-5 py-2.5 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-semibold rounded-full shadow-lg shadow-pink-500/25 active:scale-95 transition">
-                    ✨ More Magic
-                </button>
-            </div>
-        </section>
+            <p class="font-handwriting text-2xl
+                      text-pink-200">
+                Tap the gift 🎀
+            </p>
 
-    <!-- Background Audio Element -->
-    <audio id="bg-music" loop preload="auto">
-        <source src="https://assets.mixkit.co/music/preview/mixkit-happy-birthday-to-you-433.mp3" type="audio/mpeg">
+        </div>
+
+
+        <div id="final-gift-reveal"
+             class="gift-reveal glass-card rounded-3xl
+                    p-6 sm:p-10 border-2
+                    border-pink-400/50 w-full max-w-xl
+                    flex-col items-center text-center
+                    shadow-2xl mt-6">
+
+            <span class="font-handwriting text-3xl
+                         text-pink-300 mb-2">
+                For You, Saniaaa 💖
+            </span>
+
+            <h3 class="text-2xl sm:text-3xl
+                       font-bold text-white mb-5">
+                Happy Birthday! 🎂✨
+            </h3>
+
+            <div class="w-full flex justify-center
+                        rounded-2xl overflow-hidden
+                        bg-pink-950/30 p-3
+                        border border-pink-400/20">
+
+                <img
+                    src="https://media1.tenor.com/m/8cS-3p8_PVIAAAAd/happy-birthday-teddy-bear.gif"
+                    alt="Animated teddy bear saying Happy Birthday"
+                    class="w-64 h-64 sm:w-80 sm:h-80
+                           object-contain rounded-xl"
+                    loading="eager">
+
+            </div>
+
+            <p class="font-handwriting text-2xl
+                      text-pink-200 mt-5">
+
+                Hope your day is as cute and special
+                as you are! 🧸💗
+
+            </p>
+
+            <button
+                onclick="triggerSparkleBurst()"
+                class="mt-5 px-5 py-2.5
+                       bg-gradient-to-r
+                       from-pink-500 to-rose-500
+                       text-white font-semibold
+                       rounded-full shadow-lg
+                       shadow-pink-500/25
+                       active:scale-95 transition">
+
+                ✨ More Magic
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         AUDIO
+         ========================= -->
+
+    <audio id="bg-music"
+           loop
+           preload="auto">
+
+        <source
+            src="https://assets.mixkit.co/music/preview/mixkit-happy-birthday-to-you-433.mp3"
+            type="audio/mpeg">
+
     </audio>
 
-    <!-- JavaScript logic -->
+
+    <!-- =========================
+         JAVASCRIPT
+         ========================= -->
+
     <script>
-        // Landing Modal & Moving Button Logic
-        function startMainContent() {
-            const modal = document.getElementById('welcome-modal');
-            modal.classList.add('opacity-0', 'pointer-events-none');
-            setTimeout(() => {
-                modal.style.display = 'none';
-            }, 500);
 
-            // Trigger Party Sparkles / Confetti Blast
-            triggerSparkleBurst();
+        /* WELCOME */
 
-            // Auto-play music on "Yes" click
-            toggleAudio(true);
-        }
+       function startMainContent() {
+
+    const modal =
+        document.getElementById('welcome-modal');
+
+    modal.classList.add(
+        'opacity-0',
+        'pointer-events-none'
+    );
+
+    setTimeout(() => {
+        modal.style.display = 'none';
+    }, 500);
+
+    // Balloon game show karo
+    document.getElementById('balloon-game')
+        .classList.remove('hidden');
+
+    triggerSparkleBurst();
+
+    toggleAudio(true);
+}
+
+
+
+        /* NO BUTTON */
 
         function moveNoButton() {
-            const noBtn = document.getElementById('no-btn');
-            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - 100);
-            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - 100);
-            
+
+            const noBtn =
+                document.getElementById('no-btn');
+
+            const x =
+                Math.random() *
+                (window.innerWidth -
+                noBtn.offsetWidth -
+                100);
+
+            const y =
+                Math.random() *
+                (window.innerHeight -
+                noBtn.offsetHeight -
+                100);
+
             noBtn.style.position = 'fixed';
-            noBtn.style.left = `${Math.max(20, x)}px`;
-            noBtn.style.top = `${Math.max(20, y)}px`;
+
+            noBtn.style.left =
+                `${Math.max(20, x)}px`;
+
+            noBtn.style.top =
+                `${Math.max(20, y)}px`;
         }
 
-        // Sparkle Confetti Blast Function
+	/* =========================
+              BALLOON GAME
+           ========================= */
+
+let poppedBalloons = 0;
+
+function popBalloon(balloon) {
+
+    if (balloon.classList.contains('balloon-popped')) {
+        return;
+    }
+
+    balloon.classList.add('balloon-popped');
+
+    poppedBalloons++;
+
+    document.getElementById('balloon-count').innerHTML =
+        `${poppedBalloons} / 5 🎈`;
+
+    // Pop effect
+    triggerSparkleBurst();
+
+    if (poppedBalloons === 5) {
+
+        setTimeout(() => {
+
+            document.getElementById(
+                'balloon-success'
+            ).classList.remove('hidden');
+
+            triggerSparkleBurst();
+
+        }, 400);
+    }
+}
+
+
+function continueAfterBalloons() {
+
+    const game =
+        document.getElementById('balloon-game');
+
+    game.classList.add('hidden');
+
+    // Main birthday content par le jao
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+
+    triggerSparkleBurst();
+}
+   
+
+
+        /* CONFETTI */
+
         function triggerSparkleBurst() {
+
             if (typeof confetti === 'function') {
+
                 confetti({
                     particleCount: 100,
                     spread: 70,
                     origin: { y: 0.6 }
                 });
+
             }
         }
 
-        // Envelope Functionality
+
+        /* ENVELOPE */
+
         function toggleEnvelope() {
-            const closed = document.getElementById('envelope-closed');
-            const letter = document.getElementById('envelope-letter');
-            
+
+            const closed =
+                document.getElementById(
+                    'envelope-closed'
+                );
+
+            const letter =
+                document.getElementById(
+                    'envelope-letter'
+                );
+
             if (letter.classList.contains('hidden')) {
+
                 closed.classList.add('hidden');
+
                 letter.classList.remove('hidden');
+
                 triggerSparkleBurst();
+
             } else {
+
                 letter.classList.add('hidden');
+
                 closed.classList.remove('hidden');
+
             }
         }
 
-        // 3D Flip Card Functionality
+
+        /* FLIP CARDS */
+
         function flipCard(cardWrapper) {
-            const cardInner = cardWrapper.querySelector('.card-inner');
-            cardInner.classList.toggle('rotate-y-180');
+
+            const cardInner =
+                cardWrapper.querySelector('.card-inner');
+
+            cardInner.classList.toggle(
+                'rotate-y-180'
+            );
         }
 
-        // Cake Candle Blow Functionality
+
+        /* CAKE */
+
         function blowoutCandles() {
-            document.getElementById('flame-1').style.display = 'none';
-            document.getElementById('flame-2').style.display = 'none';
-            document.getElementById('flame-3').style.display = 'none';
-            
-            const status = document.getElementById('cake-status');
-            status.innerHTML = '🎉 Wish Made! Candles bujh gayi hain!';
-            status.className = 'mb-6 px-4 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-semibold';
-            
-            document.getElementById('secret-reward').classList.remove('hidden');
+
+            document.getElementById(
+                'flame-1'
+            ).style.display = 'none';
+
+            document.getElementById(
+                'flame-2'
+            ).style.display = 'none';
+
+            document.getElementById(
+                'flame-3'
+            ).style.display = 'none';
+
+
+            const status =
+                document.getElementById(
+                    'cake-status'
+                );
+
+            status.innerHTML =
+                '🎉 Wish Made! Candles bujh gayi hain!';
+
+            status.className =
+                'mb-6 px-4 py-1.5 rounded-full ' +
+                'bg-emerald-500/20 ' +
+                'border border-emerald-500/40 ' +
+                'text-emerald-300 ' +
+                'text-xs font-semibold';
+
+
+            document.getElementById(
+                'secret-reward'
+            ).classList.remove('hidden');
+
             triggerSparkleBurst();
         }
+
 
         function relightCandles() {
-            document.getElementById('flame-1').style.display = 'block';
-            document.getElementById('flame-2').style.display = 'block';
-            document.getElementById('flame-3').style.display = 'block';
-            
-            const status = document.getElementById('cake-status');
-            status.innerHTML = '<span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span><span>Candles jal rahi hain! Tap karke bujhao.</span>';
-            status.className = 'mb-6 px-4 py-1.5 rounded-full bg-pink-500/10 border border-pink-500/30 text-pink-300 text-xs font-medium flex items-center gap-2';
-            
-            document.getElementById('secret-reward').classList.add('hidden');
+
+            document.getElementById(
+                'flame-1'
+            ).style.display = 'block';
+
+            document.getElementById(
+                'flame-2'
+            ).style.display = 'block';
+
+            document.getElementById(
+                'flame-3'
+            ).style.display = 'block';
+
+
+            const status =
+                document.getElementById(
+                    'cake-status'
+                );
+
+            status.innerHTML =
+                '<span class="w-2 h-2 rounded-full ' +
+                'bg-amber-400 animate-ping"></span>' +
+                '<span>Candles jal rahi hain! ' +
+                'Tap karke bujhao.</span>';
+
+
+            status.className =
+                'mb-6 px-4 py-1.5 rounded-full ' +
+                'bg-pink-500/10 ' +
+                'border border-pink-500/30 ' +
+                'text-pink-300 ' +
+                'text-xs font-medium flex ' +
+                'items-center gap-2';
+
+
+            document.getElementById(
+                'secret-reward'
+            ).classList.add('hidden');
         }
 
 
-        // Final Gift Opening
+        /* FINAL GIFT */
+
         function openFinalGift() {
-            const box = document.getElementById('gift-box');
-            const reveal = document.getElementById('final-gift-reveal');
-            const closed = document.getElementById('final-gift-closed');
-            if (box.classList.contains('open')) return;
+
+            const box =
+                document.getElementById(
+                    'gift-box'
+                );
+
+            const reveal =
+                document.getElementById(
+                    'final-gift-reveal'
+                );
+
+            const closed =
+                document.getElementById(
+                    'final-gift-closed'
+                );
+
+            if (box.classList.contains('open'))
+                return;
+
             box.classList.add('open');
+
             triggerSparkleBurst();
+
             setTimeout(() => {
+
                 closed.classList.add('hidden');
+
                 reveal.classList.add('show');
+
                 triggerSparkleBurst();
+
             }, 850);
         }
 
-        // Audio Toggle Functionality
+
+        /* AUDIO */
+
         let isPlaying = false;
+
         function toggleAudio(forcePlay = false) {
-            const audio = document.getElementById('bg-music');
-            const icon = document.getElementById('audio-icon');
-            
+
+            const audio =
+                document.getElementById(
+                    'bg-music'
+                );
+
+            const icon =
+                document.getElementById(
+                    'audio-icon'
+                );
+
+
             if (!isPlaying || forcePlay) {
-                audio.play().then(() => {
-                    isPlaying = true;
-                    icon.className = 'fas fa-volume-up text-base text-pink-400 animate-bounce';
-                }).catch(() => {});
+
+                audio.play()
+                    .then(() => {
+
+                        isPlaying = true;
+
+                        icon.className =
+                            'fas fa-volume-up ' +
+                            'text-base text-pink-400 ' +
+                            'animate-bounce';
+
+                    })
+                    .catch(() => {});
+
             } else {
+
                 audio.pause();
+
                 isPlaying = false;
-                icon.className = 'fas fa-music text-base';
+
+                icon.className =
+                    'fas fa-music text-base';
             }
         }
 
+
+        /* HUG */
+
         function sendVirtualHug() {
-            alert("🫂 Endless Warm Hugs sent to Saniaaa! ❤️");
+
+            alert(
+                "🫂 Endless Warm Hugs sent to " +
+                "Saniaaa! ❤️"
+            );
+
             triggerSparkleBurst();
         }
 
+
+        /* NAME */
+
         function focusNameInput() {
-            document.getElementById('recipient-name').focus();
+
+            document.getElementById(
+                'recipient-name'
+            ).focus();
         }
 
-        // Background Sparkle Floating Canvas Effect
-        const canvas = document.getElementById('particle-canvas');
-        const ctx = canvas.getContext('2d');
+
+        /* PARTICLES */
+
+        const canvas =
+            document.getElementById(
+                'particle-canvas'
+            );
+
+        const ctx =
+            canvas.getContext('2d');
+
         let particles = [];
 
+
         function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+
+            canvas.width =
+                window.innerWidth;
+
+            canvas.height =
+                window.innerHeight;
         }
-        window.addEventListener('resize', resizeCanvas);
+
+
+        window.addEventListener(
+            'resize',
+            resizeCanvas
+        );
+
         resizeCanvas();
 
+
         class Particle {
+
             constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 3 + 1;
-                this.speedX = Math.random() * 1 - 0.5;
-                this.speedY = Math.random() * 1 - 0.5;
-                this.opacity = Math.random();
+
+                this.x =
+                    Math.random() *
+                    canvas.width;
+
+                this.y =
+                    Math.random() *
+                    canvas.height;
+
+                this.size =
+                    Math.random() * 3 + 1;
+
+                this.speedX =
+                    Math.random() * 1 - 0.5;
+
+                this.speedY =
+                    Math.random() * 1 - 0.5;
+
+                this.opacity =
+                    Math.random();
             }
+
+
             update() {
+
                 this.x += this.speedX;
                 this.y += this.speedY;
-                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+
+
+                if (
+                    this.x < 0 ||
+                    this.x > canvas.width
+                ) {
+                    this.speedX *= -1;
+                }
+
+
+                if (
+                    this.y < 0 ||
+                    this.y > canvas.height
+                ) {
+                    this.speedY *= -1;
+                }
             }
+
+
             draw() {
-                ctx.fillStyle = `rgba(244, 114, 182, ${this.opacity})`;
+
+                ctx.fillStyle =
+                    `rgba(244, 114, 182, ${this.opacity})`;
+
                 ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+
+                ctx.arc(
+                    this.x,
+                    this.y,
+                    this.size,
+                    0,
+                    Math.PI * 2
+                );
+
                 ctx.fill();
             }
         }
 
+
         for (let i = 0; i < 45; i++) {
-            particles.push(new Particle());
+
+            particles.push(
+                new Particle()
+            );
         }
 
+
         function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            ctx.clearRect(
+                0,
+                0,
+                canvas.width,
+                canvas.height
+            );
+
             particles.forEach(p => {
+
                 p.update();
                 p.draw();
+
             });
-            requestAnimationFrame(animateParticles);
+
+            requestAnimationFrame(
+                animateParticles
+            );
         }
+
+
         animateParticles();
+
     </script>
+
 </body>
 </html>
