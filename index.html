@@ -402,32 +402,33 @@
     transform: scale(1.15);
 }
 
-.balloon-1 {
-    left: 8%;
-    top: 12%;
+ .balloon-1 {
+    left: 25%;
+    top: 25%;
+    animation-delay: 0s;
 }
 
 .balloon-2 {
-    right: 10%;
-    top: 20%;
+    left: 75%;
+    top: 25%;
     animation-delay: .5s;
 }
 
 .balloon-3 {
-    left: 40%;
-    top: 8%;
+    left: 15%;
+    top: 70%;
     animation-delay: 1s;
 }
 
 .balloon-4 {
-    left: 18%;
-    bottom: 12%;
+    left: 50%;
+    top: 70%;
     animation-delay: 1.5s;
 }
 
 .balloon-5 {
-    right: 25%;
-    bottom: 10%;
+    left: 85%;
+    top: 70%;
     animation-delay: 2s;
 }
 
@@ -444,6 +445,38 @@
 .balloon-popped {
     animation: balloonPop .35s ease forwards !important;
     pointer-events: none;
+}
+
+/* Word revealed at the exact balloon position */
+.balloon-word {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(.55);
+    opacity: 0;
+    white-space: nowrap;
+    font-family: 'Caveat', cursive;
+    font-size: clamp(1.7rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: #fce7f3;
+    text-shadow: 0 0 14px rgba(244,114,182,.75);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.balloon-word.show {
+    animation: wordReveal .45s cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+@keyframes wordReveal {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(.55);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
 }
 
 @keyframes balloonPop {
@@ -466,7 +499,17 @@
 @media (max-width: 640px) {
 
     .game-balloon {
-        font-size: 52px;
+        font-size: 42px;
+    }
+
+    .balloon-1 { left: 25%; top: 24%; }
+    .balloon-2 { left: 75%; top: 24%; }
+    .balloon-3 { left: 12%; top: 70%; }
+    .balloon-4 { left: 50%; top: 70%; }
+    .balloon-5 { left: 88%; top: 70%; }
+
+    .balloon-word {
+        font-size: clamp(1.15rem, 5vw, 1.7rem);
     }
 
 }
@@ -586,18 +629,23 @@
                     bg-white/5 backdrop-blur-sm">
 
             <button class="game-balloon balloon-1"
+                    data-word="You"
                     onclick="popBalloon(this)">🎈</button>
 
             <button class="game-balloon balloon-2"
+                    data-word="Are"
                     onclick="popBalloon(this)">🎈</button>
 
             <button class="game-balloon balloon-3"
+                    data-word="So"
                     onclick="popBalloon(this)">🎈</button>
 
             <button class="game-balloon balloon-4"
+                    data-word="Special"
                     onclick="popBalloon(this)">🎈</button>
 
             <button class="game-balloon balloon-5"
+                    data-word="Always ❤️"
                     onclick="popBalloon(this)">🎈</button>
 
         </div>
@@ -2070,6 +2118,8 @@ function popBalloon(balloon) {
         return;
     }
 
+    const word = balloon.dataset.word || '';
+
     balloon.classList.add('balloon-popped');
 
     poppedBalloons++;
@@ -2077,8 +2127,24 @@ function popBalloon(balloon) {
     document.getElementById('balloon-count').innerHTML =
         `${poppedBalloons} / 5 🎈`;
 
-    // Pop effect
+    // Balloon pop effect
     triggerSparkleBurst();
+
+    // Balloon pop hone ke baad usi jagah word permanently rahega.
+    setTimeout(() => {
+        balloon.classList.remove('balloon-popped');
+        balloon.style.animation = 'none';
+        balloon.style.opacity = '1';
+        balloon.style.transform = 'none';
+        balloon.innerHTML = `<span class="balloon-word">${word}</span>`;
+
+        const wordEl = balloon.querySelector('.balloon-word');
+        if (wordEl) {
+            requestAnimationFrame(() => {
+                wordEl.classList.add('show');
+            });
+        }
+    }, 320);
 
     if (poppedBalloons === 5) {
 
@@ -2090,7 +2156,7 @@ function popBalloon(balloon) {
 
             triggerSparkleBurst();
 
-        }, 400);
+        }, 750);
     }
 }
 
