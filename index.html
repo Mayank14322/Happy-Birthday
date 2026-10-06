@@ -547,8 +547,8 @@
 
             <div class="my-3 flex justify-center w-full">
                 <img
-                    src="birthday-image.jpg"
-                    alt="Birthday celebration image"
+                    src="https://media1.tenor.com/m/jhVNIStBHy0AAAAd/bubu-dudu-birthday.gif"
+                    alt="Bubu and Dudu Happy Birthday GIF"
                     class="w-64 h-44 object-contain rounded-2xl drop-shadow-md"
                     loading="eager"
                 >
@@ -1441,13 +1441,13 @@
                         <span class="cake-heart h2">♥</span>
                         <span class="cake-heart h3">♥</span>
 
-                        <div class="candle c1" id="candle-1" onclick="blowoutCandles(1)" title="Is candle ko blow out karo">
+                        <div class="candle c1" id="candle-1" onclick="blowoutCandles(1)" title="Pehli candle blow out karo">
                             <span class="number-candle two">2</span>
                             <span class="candle-wick"></span>
                             <span class="candle-flame-new" id="flame-1"></span>
                         </div>
 
-                        <div class="candle c2" id="candle-2" onclick="blowoutCandles(2)" title="Is candle ko blow out karo">
+                        <div class="candle c2" id="candle-2" onclick="blowoutCandles(2)" title="Dusri candle blow out karo">
                             <span class="number-candle one">0</span>
                             <span class="candle-wick"></span>
                             <span class="candle-flame-new" id="flame-2"></span>
@@ -1465,10 +1465,6 @@
                     </div>
                 </div>
 
-                <p class="font-handwriting text-xl text-pink-200 -mt-3 mb-3">
-                    Baked with love and zero calories 💕
-                </p>
-
                 <div id="cake-cut-progress" class="cake-cut-progress">
                     <div class="cake-cut-progress-top">
                         <span id="cake-cut-progress-label">Cake cutting... 🔪</span>
@@ -1481,7 +1477,7 @@
 
                 <div class="mt-2 flex flex-wrap gap-3 justify-center">
                     <button id="cake-btn"
-                            onclick="blowoutNextCandle()"
+                            onclick="blowoutCandles(candle1BlownOut ? 2 : 1)"
                             class="cake-blow-btn px-5 py-2.5
                                    bg-gradient-to-r from-pink-500 to-rose-500
                                    hover:from-pink-400 hover:to-rose-400
@@ -2342,8 +2338,8 @@
                         border border-pink-400/20">
 
                 <img
-                    src="birthday-image.jpg"
-                    alt="Birthday celebration image"
+                    src="https://media1.tenor.com/m/8cS-3p8_PVIAAAAd/happy-birthday-teddy-bear.gif"
+                    alt="Animated teddy bear saying Happy Birthday"
                     class="w-64 h-64 sm:w-80 sm:h-80
                            object-contain rounded-xl"
                     loading="eager">
@@ -2619,26 +2615,27 @@ function continueAfterBalloons() {
         }
 
         function blowoutCandles(candleNumber) {
-            if (cakeAlreadyCut || (candleNumber !== 1 && candleNumber !== 2)) return;
+            if (cakeAlreadyCut || candlesBlownOut) return;
 
-            const alreadyBlownOut = candleNumber === 1
-                ? candle1BlownOut
-                : candle2BlownOut;
-            if (alreadyBlownOut) return;
-
-            const flame = document.getElementById('flame-' + candleNumber);
-            if (flame) flame.style.display = 'none';
-
-            if (candleNumber === 1) {
+            // IMPORTANT: Either candle can be tapped in ANY order.
+            // Each tap only blows out the candle that was tapped.
+            if (candleNumber === 1 && !candle1BlownOut) {
+                document.getElementById('flame-1').style.display = 'none';
                 candle1BlownOut = true;
-            } else {
+                triggerSparkleBurst();
+            } else if (candleNumber === 2 && !candle2BlownOut) {
+                document.getElementById('flame-2').style.display = 'none';
                 candle2BlownOut = true;
+                triggerSparkleBurst();
+            } else {
+                return;
             }
 
-            triggerSparkleBurst();
-
+            // Only after BOTH candles have individually been tapped/blown out
+            // should the knife become available.
             if (candle1BlownOut && candle2BlownOut) {
                 candlesBlownOut = true;
+
                 setCakeStatus('Dono candles bujh gayi! 🎉 Ab knife pakad kar cake ko cut karo. 🔪', true);
 
                 const blowBtn = document.getElementById('cake-btn');
@@ -2649,14 +2646,9 @@ function continueAfterBalloons() {
                     knife.classList.add('show');
                     knife.style.pointerEvents = 'auto';
                 }
-                return;
+            } else {
+                setCakeStatus('Ek candle bujh gayi! 🕯️ Ab jo candle jal rahi hai uspar tap karo.');
             }
-
-            setCakeStatus('Candle ' + candleNumber + ' bujh gayi! 🕯️ Ab doosri candle par tap karo.');
-        }
-
-        function blowoutNextCandle() {
-            blowoutCandles(candle1BlownOut ? 2 : 1);
         }
 
         function startCakeCut(event) {
@@ -2842,7 +2834,7 @@ function continueAfterBalloons() {
             if (cutBtn) cutBtn.classList.remove('show');
 
             document.getElementById('secret-reward').classList.add('hidden');
-            setCakeStatus('Wish maango... phir kisi bhi candle par tap karo! 🕯️');
+            setCakeStatus('Pehle 2 wali candle par tap karo 🕯️');
         }
 
 
