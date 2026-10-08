@@ -519,6 +519,13 @@
 
 <body class="relative min-h-screen text-purple-100 selection:bg-pink-500 selection:text-white">
 
+    <style>
+        #welcome-modal .falling-hearts{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+        #welcome-modal .falling-heart{position:absolute;top:-30px;left:var(--heart-left);font-size:var(--heart-size);color:var(--heart-color);opacity:var(--heart-opacity);filter:drop-shadow(0 2px 5px rgba(244,114,182,.25));animation:welcomeHeartFall var(--heart-duration) linear var(--heart-delay) infinite;will-change:transform}
+        @keyframes welcomeHeartFall{0%{transform:translate3d(0,-35px,0) rotate(0deg) scale(.8)}50%{transform:translate3d(var(--heart-drift),50vh,0) rotate(140deg) scale(1)}100%{transform:translate3d(calc(var(--heart-drift) * -1),110vh,0) rotate(300deg) scale(.75)}}
+        #welcome-modal .welcome-card{position:relative;z-index:2}
+    </style>
+
     <!-- =========================
          WELCOME MODAL
          ========================= -->
@@ -527,6 +534,19 @@
          class="fixed inset-0 z-50 flex items-center justify-center
                 bg-pink-950/85 backdrop-blur-md p-4
                 transition-opacity duration-500">
+
+        <div class="falling-hearts" aria-hidden="true">
+            <span class="falling-heart" style="--heart-left:4%;--heart-size:14px;--heart-color:#f472b6;--heart-opacity:.65;--heart-duration:6.5s;--heart-delay:-1s;--heart-drift:22px;">♥</span>
+            <span class="falling-heart" style="--heart-left:12%;--heart-size:10px;--heart-color:#fb7185;--heart-opacity:.55;--heart-duration:7.8s;--heart-delay:-4s;--heart-drift:-18px;">♥</span>
+            <span class="falling-heart" style="--heart-left:21%;--heart-size:16px;--heart-color:#ec4899;--heart-opacity:.62;--heart-duration:8.5s;--heart-delay:-2.5s;--heart-drift:28px;">♥</span>
+            <span class="falling-heart" style="--heart-left:31%;--heart-size:11px;--heart-color:#f9a8d4;--heart-opacity:.58;--heart-duration:7s;--heart-delay:-6s;--heart-drift:-24px;">♥</span>
+            <span class="falling-heart" style="--heart-left:42%;--heart-size:13px;--heart-color:#f472b6;--heart-opacity:.62;--heart-duration:9s;--heart-delay:-3.5s;--heart-drift:20px;">♥</span>
+            <span class="falling-heart" style="--heart-left:53%;--heart-size:9px;--heart-color:#fb7185;--heart-opacity:.5;--heart-duration:7.2s;--heart-delay:-5s;--heart-drift:-26px;">♥</span>
+            <span class="falling-heart" style="--heart-left:64%;--heart-size:15px;--heart-color:#ec4899;--heart-opacity:.62;--heart-duration:8.2s;--heart-delay:-7s;--heart-drift:25px;">♥</span>
+            <span class="falling-heart" style="--heart-left:75%;--heart-size:11px;--heart-color:#f9a8d4;--heart-opacity:.56;--heart-duration:6.8s;--heart-delay:-2s;--heart-drift:-20px;">♥</span>
+            <span class="falling-heart" style="--heart-left:86%;--heart-size:16px;--heart-color:#f472b6;--heart-opacity:.65;--heart-duration:8.8s;--heart-delay:-4.5s;--heart-drift:24px;">♥</span>
+            <span class="falling-heart" style="--heart-left:95%;--heart-size:10px;--heart-color:#fb7185;--heart-opacity:.52;--heart-duration:7.6s;--heart-delay:-6.5s;--heart-drift:-22px;">♥</span>
+        </div>
 
         <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-sm w-full
                     text-center shadow-2xl border-4 border-pink-300
